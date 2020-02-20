@@ -2,8 +2,9 @@
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{vmargin}
+\usepackage[spanish]{babel}
 
- \renewcommand*\contentsname{Índice}
+
 
 \begin{document}
     \begin{titlepage}
@@ -68,17 +69,18 @@
     
         \clearpage
      \end{titlepage}
-     
-    
+
+    \renewcommand{\contentsname}{Índice}
     \tableofcontents
+    
+    \input{chapters/agradecimientos.tex}
+    \input{chapters/resumen/resumen.tex}
+    \input{chapters/palabrasclave/palabrasclave.tex}
+     \input{chapters/resumen/abstract.tex}
+    \input{chapters/palabrasclave/keywords.tex}
     
     \input{chapters/chapter01.tex}
     \input{chapters/chapter02.tex}
     \input{chapters/chapter03.tex}
-    \input{chapters/chapter04.tex}
-    
-   
-    
-
     
 \end{document}
