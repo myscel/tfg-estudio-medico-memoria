@@ -3,6 +3,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{vmargin}
 \usepackage[spanish]{babel}
+%Options: Sonny, Lenny, Glenn, Conny, Bjornstrup
+\usepackage[Sonny]{fncychap}
+\usepackage[nottoc,numbib]{tocbibind}
 
 
 
@@ -17,7 +20,7 @@
 
         \vspace{0.5cm}
         
-        {\huge\textbf{ESTUDIO MÉDICO DIABETES}  }
+        {\huge\textbf{Esd2: Cuaderno de recogida de datos para el estudio médico}}
         
         \vspace{2.3cm}
     
@@ -48,7 +51,7 @@
 
         \vspace{0.5cm}
         
-        {\huge\textbf{ESTUDIO MÉDICO DIABETES}  }
+        {\huge\textbf{Esd2: Cuaderno de recogida de datos para el estudio médico}  }
         
         \vspace{2.3cm}
     
@@ -73,14 +76,19 @@
     \renewcommand{\contentsname}{Índice}
     \tableofcontents
     
+    
     \input{chapters/agradecimientos.tex}
     \input{chapters/resumen/resumen.tex}
     \input{chapters/palabrasclave/palabrasclave.tex}
      \input{chapters/resumen/abstract.tex}
     \input{chapters/palabrasclave/keywords.tex}
     
-    \input{chapters/chapter01.tex}
+    \input{chapters/tecnologias.tex}
     \input{chapters/chapter02.tex}
     \input{chapters/chapter03.tex}
+    
+
+    \bibliographystyle{plain}
+    \bibliography{references}
     
 \end{document}
