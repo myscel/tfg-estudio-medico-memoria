@@ -1,0 +1,1 @@
+todas las posibilidades de las referencias: https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex#Reference_guide
