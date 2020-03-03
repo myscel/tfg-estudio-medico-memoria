@@ -22,7 +22,7 @@
     
      \begin{figure}[h]
     \centering
-     \includegraphics[width=0.5\textwidth]{images/servidorhostinger}
+     \includegraphics[width=0.4\textwidth]{images/servidorhostinger}
     \caption{Servidor en Hostinger}
     \end{figure}
     
@@ -30,9 +30,40 @@
     
     Para conectarnos al servidor utilizamos el programa MobaXterm, conectándonos al servidor a traves de SSH. Nuestro objetivo era mantener el archivo .jar ejecutándose en la máquina incluso si no estamos conectados a la misma, para ello generamos un \textit{servicio}, esto es, un script que se mantiene arrancado incluso si cerramos la sesión. \\
     \newline
-    Una vez generado el archivo SNAPSHOT .jar de nuestro proyecto Java Spring 
+    Lo primero que tenemos que hacer es generar el archivo ejecutable de nuestro proyecto BackEnd. Una vez generado el archivo SNAPSHOT .jar de nuestro proyecto Java Spring, nos disponemos a subirlo a la carpeta /root/back.
     
-
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=0.9\textwidth]{images/jarback}
+    \caption{Jar desplegado en MobaXterm}
+    \end{figure}
+    
+    A continuación, generamos un script llamado \textit{start\_back.sh}  que simplemente ejecuta el comando \textit{java -jar} para arrancar el ejecutable .jar, el cual vamos a guardar en el directorio /usr/local/bin. Lo guardamos en dicho directorio debido a que este directorio es accesible por todos los usuarios.
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/script}
+    \caption{Script start\_back.sh desplegado en MobaXterm}
+    \end{figure}
+    
+    Después hemos generado un \textit{servicio} llamado \textit{daemonback.service} en la carpeta /etc/systemd/system, que es el directorio indicado en sistemas Linux para almacenar y gestionar demonios. Este servicio se encarga de ejecutar en segundo plano el script \textit{start\_back.sh}. 
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/demonio}
+    \caption{Servicio daemonback.service desplegado en MobaXterm}
+    \end{figure}
+    
+    Por último tan solo tenemos que ejecutar el servicio generado previamente con el comando \texttt{sudo service daemonback start}. Para ver el estado del .jar, ejecutamos el comando \texttt{sudo service daemonback status} y nos muestra lo siguiente:
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/serviciostart}
+    \caption{Estado servicio}
+    \end{figure}
+    
+    
+    
 
 
     
