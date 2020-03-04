@@ -1,1 +1,0 @@
-# tfg-estudio-medico-memoria
