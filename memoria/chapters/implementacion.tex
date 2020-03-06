@@ -24,9 +24,40 @@
     
     
     
-    \subsection{Arquitectura de la aplicación Java Spring}
+    \subsection{Arquitectura de la aplicación Angular}
+    
+    \subsection{Inicialización del proyecto}
+        \subsubsection{\underline{Local}}
+        \subsubsection{\underline{Remoto}}
     
     
     \section{BackEnd}
-    \subsection{Generación Proyecto Java Spring}
-    \subsection{Arquitectura de la aplicación Angular}
+    
+     En esta sección se va a hablar del proyecto Java Spring Boot el cual compone la parte BackEnd de nuestra aplicación. La aplicación es una API-REST, la cual será consumida por el FrontEnd mediente llamadas en protocolo HTTP. 
+     
+     
+    \subsection{Generación Proyecto Java Spring Boot}
+    Para la generación del proyecto inicial se utilizó Spring Initializr\cite{springinitializr}, a través de su página web. Escogimos gestionar las dependencias del proyecto con Maven dado el alto grado de familiaridad que poseemos con esta tecnología. A continuación se escogió el lenguaje Java para implementar la aplicación debido a sus características intrínsecas(polimorfismo y herencia). Para finalizar se añadieron los paquetes de Web y JPA, necesarios para gestionar las conexiones externas y para la capa de persistencia.
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/springstarter}
+    \caption{Proyecto inicial Spring Boot}
+    \end{figure}
+    
+    Una vez generado el proyecto Sprinig Boot, hubo de importarse el mismo en el entorno de desarrollo Eclipse.
+    
+    
+    \subsection{Arquitectura de la aplicación Java SPring Boot}
+    La aplicación Spring Boot desarrollada se divide principalmente en cuatro carpetas o bloques: java, recursos, test  y el archivo pom.xml. Dichos bloques se explicarán con detalles en las secciones a continuación.
+
+        \subsubsection{\underline{Bloque java}}
+        \subsubsection{\underline{Bloque test}}
+        \subsubsection{\underline{Bloque resources}}
+        \subsubsection{\underline{Bloque pom.xml}}
+        
+        
+    \subsection{Inicialización del proyecto}
+        \subsubsection{\underline{Local}}
+        \subsubsection{\underline{Remoto}}
+    
