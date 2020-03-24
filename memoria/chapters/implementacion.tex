@@ -48,13 +48,96 @@
     Una vez generado el proyecto Sprinig Boot, hubo de importarse el mismo en el entorno de desarrollo Eclipse.
     
     
-    \subsection{Arquitectura de la aplicación Java SPring Boot}
-    La aplicación Spring Boot desarrollada se divide principalmente en cuatro carpetas o bloques: java, recursos, test  y el archivo pom.xml. Dichos bloques se explicarán con detalles en las secciones a continuación.
+    \subsection{Arquitectura de la aplicación Java Spring Boot}
+    La aplicación Spring Boot desarrollada se divide principalmente en los apartados de código, documentación y calidad
 
-        \subsubsection{\underline{Bloque java}}
-        \subsubsection{\underline{Bloque test}}
-        \subsubsection{\underline{Bloque resources}}
-        \subsubsection{\underline{Bloque pom.xml}}
+        \subsubsection{\underline{Código}}
+        El proyecto BackEnd de la aplicación está escrito en Java 8, y dividido en los sigueintes bloques o paquetes, los cuales se describen a continuación.
+        
+        \begin{itemize}
+            \item\textbf{Controladores}  \\
+            Son los elementos del código encargados de recibir las diferentes peticiones HTTP y mapear los objetos enviados en las mismas, ya sea en el cuerpo de la petición en caso de ser una petición de tipo POST, o en la propia url si es una petición de tipo GET. Además de esto, son los encargados de realizar la lógica de navegación, llamando a la capa de negocio y, con el resultado obtenido, generar una respuesta a la parte FrontEnd de la aplicación.
+            \newline
+            
+            Para identificar los diferentes controladores de nuestra aplicación, la nomenclatura de los mismos siempre terminará con la palabra \textit{Controller}.
+            \newline
+            
+            En nuestra aplicación disponemos de 3 controladores: El \textit{UserController}, encargado principalmente del proceso de login de la aplicación. El \textit{AdminController}, encargado de obtener todos los recursos que demande el usuario de tipo administrador en nuestra aplicación. Finalmente el \textit{ResearcherController}, encargado de obtener los recursos que demanden los usuarios de tipo investigador en nuestra aplicación.
+            \newline
+            
+            Todos los controladores se han implementado con el patrón de Diseño \textit{Interface}, separando los métodos de su implementación y haciendo al código más legible y mantenible de cara al futuro.
+            \newline
+            
+                \begin{figure}[h]
+                    \centering
+                     \includegraphics[width=0.8\textwidth]{images/controllers.JPG}
+                    \caption{Controladores del proyecto BackEnd}
+                \end{figure}
+                
+                \begin{figure}[h]
+                \centering
+                \includegraphics[width=1\textwidth]{images/usercontroller.JPG}
+                \caption{Interfaz Controlador UserController}
+                \end{figure}
+                
+                \FloatBarrier
+            
+             \item\textbf{Servicios de la aplicación}  \\
+            Son los elementos del código encargados de centralizar la lógica principal de la aplicación. Los controladores los llaman, estos llaman a los repositorios para obtener los recursos solicitados, y devuelven dichos recursos al controlador.
+            \newline
+            
+            Para identificar los diferentes servicios de de nuestra aplicación, la nomenclatura de los mismos siempre terminará con la palabra \textit{Business}.
+            \newline
+            
+            En nuestra aplicación disponemos de 3 servicios de aplicación: El \textit{UserBusiness}, encargado principalmente de gestionar a los diferentes usuarios de la aplicación. El \textit{ResearcherBusiness}, encargado de gestionar las diferentes funcionalidades que puede realizar un usuario de tipo investigador en nuestra aplicación. Por último el \textit{SubjectBusiness}, encargado de gestionar a los pacientes y a sus respectivas citas y cuestionarios.
+            \newline
+            
+             \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\textwidth]{images/business.JPG}
+                \caption{Servicios de Aplicación del proyecto BackEnd}
+            \end{figure}
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=1\textwidth]{images/userbusiness.JPG}
+                \caption{Interfaz Servicio de aplicación UserBusiness}
+            \end{figure}
+            
+            \FloatBarrier
+            
+            \item\textbf{Repositorios}  \\
+            Son los elementos encargados de comunicarse con la base de datos correspodiente, ya sea guardando recursos, actualizar, listar, borrar etc... \\
+            \newline
+            Todos los repositorios extienden de la clase \textit{JpaRepository}, una clase perteneciente a SpringData, la cual implementa el código necesario para realizar una query a la base de datos. De esta manera no ha sido necesario implementar dichas clases.
+            \newline 
+            
+            Para identificar los diferentes repositorios de de nuestra aplicación, la nomenclatura de los mismos siempre terminará con la palabra \textit{Repository}.
+            \newline
+            
+            Nuestra aplicación dispone de 4 repositorios: El \textit{InvestigationDetailsRepository}, encargado de gestionar los detalles de los cuestionarios realizados a los pacientes. El \textit{InvestigationRepository}, encargado de gestionar los cuestionarios realizados a los pacientes. El \textit{UserRepository}, encargado de gestionar a los diferentes usuarios administradores e investigadores de la aplicación. Y finalmente, el
+            \textit{SubjectRepository}, encargado de gestionar a los pacientes del estudio.
+            \newline
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.8\textwidth]{images/repository.JPG}
+                \caption{Repositorios del proyecto BackEnd}
+            \end{figure}
+            
+            \begin{figure}[h]
+                \centering
+                \includegraphics[width=1\textwidth]{images/userrepository.JPG}
+                \caption{Interfaz Repositorio UserRepository}
+            \end{figure}
+            
+            \FloatBarrier
+            
+            \item\textbf{Modelos}  \\
+        \end{itemize}
+        \subsubsection{\underline{Documentación}}
+        \subsubsection{\underline{Calidad}}
+
         
         
     \subsection{Inicialización del proyecto}
