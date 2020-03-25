@@ -49,14 +49,14 @@
     
     
     \subsection{Arquitectura de la aplicación Java Spring Boot}
-    La aplicación Spring Boot desarrollada se divide principalmente en los apartados de código, documentación y calidad
+    La arquitectura de la aplicación Spring Boot desarrollada se divide principalmente en los apartados de código, documentación y calidad.
 
         \subsubsection{\underline{Código}}
-        El proyecto BackEnd de la aplicación está escrito en Java 8, y dividido en los sigueintes bloques o paquetes, los cuales se describen a continuación.
+        El proyecto BackEnd de la aplicación está escrito en Java 8, y dividido en los siguientes bloques o paquetes, los cuales se describen a continuación.
         
         \begin{itemize}
             \item\textbf{Controladores}  \\
-            Son los elementos del código encargados de recibir las diferentes peticiones HTTP y mapear los objetos enviados en las mismas, ya sea en el cuerpo de la petición en caso de ser una petición de tipo POST, o en la propia url si es una petición de tipo GET. Además de esto, son los encargados de realizar la lógica de navegación, llamando a la capa de negocio y, con el resultado obtenido, generar una respuesta a la parte FrontEnd de la aplicación.
+            Son los elementos del código encargados de recibir las diferentes peticiones HTTP y mapear los objetos enviados en las mismas, ya sea en el cuerpo de la petición en caso de ser una petición de tipo POST, o en la propia url si es una petición de tipo GET. Además de esto, son los encargados de realizar la lógica de navegación, llamando a la capa de Negocio y, con el resultado obtenido, generar una respuesta a la parte FrontEnd de la aplicación.
             \newline
             
             Para identificar los diferentes controladores de nuestra aplicación, la nomenclatura de los mismos siempre terminará con la palabra \textit{Controller}.
@@ -77,7 +77,7 @@
                 \begin{figure}[h]
                 \centering
                 \includegraphics[width=1\textwidth]{images/usercontroller.JPG}
-                \caption{Interfaz Controlador UserController}
+                \caption{Ejemplo Interfaz Controlador UserController}
                 \end{figure}
                 
                 \FloatBarrier
@@ -92,6 +92,9 @@
             En nuestra aplicación disponemos de 3 servicios de aplicación: El \textit{UserBusiness}, encargado principalmente de gestionar a los diferentes usuarios de la aplicación. El \textit{ResearcherBusiness}, encargado de gestionar las diferentes funcionalidades que puede realizar un usuario de tipo investigador en nuestra aplicación. Por último el \textit{SubjectBusiness}, encargado de gestionar a los pacientes y a sus respectivas citas y cuestionarios.
             \newline
             
+            Al igual que los controladores, todos los servicios de aplicación se han implementado con el patrón de diseño \textit{Interface}
+            \newline.
+            
              \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.8\textwidth]{images/business.JPG}
@@ -101,7 +104,7 @@
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=1\textwidth]{images/userbusiness.JPG}
-                \caption{Interfaz Servicio de aplicación UserBusiness}
+                \caption{Ejemplo Interfaz Servicio de aplicación UserBusiness}
             \end{figure}
             
             \FloatBarrier
@@ -134,6 +137,73 @@
             \FloatBarrier
             
             \item\textbf{Modelos}  \\
+            Son los elementos encargados de almacenar la información de las bases de datos y de las peticiones HTTP, delimitando el dominio de las mismas.
+            \newline
+            
+            Hay 3 tipos de modelos en nuestra aplicación:
+            \begin{itemize}
+                \item Dominio. \\
+                Son los elementos que definen un rango de posibles valores. En nuestra aplicación disponemos del enumerado  \textit{Role} para definir los tipos de usuarios que pueden acceder a la aplicación.
+                \newline
+                
+                 \begin{figure}[h]
+                \centering
+                \includegraphics[width=0.9\textwidth]{images/role.JPG}
+                \caption{Ejemplo Dominio Enumerado Role}
+                \end{figure}
+                
+              
+                \item Entidades. \\
+                Son los elementos encargados de interactuar con las bases de datos de nuestra aplicación. Estas entidades JPA, también llamadas POJO's(Plain Old Java Objects), se encuentran mapeadas mediante anotaciones y representan las tablas de nuestra base de datos relacional.
+                \newline
+                
+                
+            Para identificar las diferentes entidades de nuestra aplicación, la nomenclatura de las mismas siempre terminará con la palabra \textit{Entity}.
+            \newline
+                
+                  \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=0.8\textwidth]{images/entity.JPG}
+                        \caption{Entidades del proyecto BackEnd}
+                    \end{figure}
+            
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=1\textwidth]{images/investigationentity.JPG}
+                        \caption{Ejemplo Entidad InvestigationEntity}
+                    \end{figure}
+            
+            \FloatBarrier
+                
+                
+                \item Dtos(Data Transfer Objects). \\
+                Son los elementos encargados de mapear los objetos de tipo JSON enviados en las peticiones HTTP para ser tratados en la aplicación. También se encargan de devolver la información necesaria mediante una respuesta HTTP.
+                \newline
+                
+                 Para identificar a los dtos(Data Transfer Objects) de nuestra aplicación, la nomenclatura de los misms siempre terminará con la palabra \textit{Dto}.
+                \newline
+                
+                De esta manera, los controladores de la aplicación tratarán los dtos y los mapearán a entidades para ser tratadas en la capa de Negocio, proporcionando seguridad y robustez a la aplicación, evitando posibles inyecciones de código y protegiendo los campos sensibles que no deban mostrarse en el exterior.
+                \newline 
+                
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=0.8\textwidth]{images/dto.JPG}
+                        \caption{Dtos del proyecto BackEnd}
+                    \end{figure}
+            
+                    \begin{figure}[h]
+                        \centering
+                        \includegraphics[width=1\textwidth]{images/userdto.JPG}
+                        \caption{Ejemplo dto UserDto}
+                    \end{figure}
+            
+            \FloatBarrier
+                
+                
+            \end{itemize}
+            
+            
         \end{itemize}
         \subsubsection{\underline{Documentación}}
         \subsubsection{\underline{Calidad}}
