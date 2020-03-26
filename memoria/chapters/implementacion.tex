@@ -49,7 +49,7 @@
     
     
     \subsection{Arquitectura de la aplicación Java Spring Boot}
-    La arquitectura de la aplicación Spring Boot desarrollada se divide principalmente en los apartados de código, documentación y calidad.
+    La arquitectura de la aplicación Spring Boot desarrollada se divide principalmente en los apartados de código, documentación y tests.
 
         \subsubsection{\underline{Código}}
         El proyecto BackEnd de la aplicación está escrito en Java 8, y dividido en los siguientes bloques o paquetes, los cuales se describen a continuación.
@@ -206,7 +206,74 @@
             
         \end{itemize}
         \subsubsection{\underline{Documentación}}
-        \subsubsection{\underline{Calidad}}
+        A la hora de documentar la aplicación BackEnd, por una parte, se utilizó \textit{Javadoc} al principio de cada clase Java, y por otro lado, se utilizó \textit{Swagger}. 
+        \newline
+        
+        Para utilizar el framework \textit{Swagger} en la aplicación, hubo de añadir las correspondientes dependencias en el archivo \textit{pom.xml}.
+        \newline
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{images/swagger.JPG}
+            \caption{Dependencias Swagger añadidas en pom.xml}
+        \end{figure}
+        
+        \textit{Swagger} nos permitió documentar tanto los endpoints como los dtos de nuestra aplicación a través de anotaciones, las cuales se añadieron en las respectivas clases implicadas.
+        
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{images/swaggerexample.JPG}
+            \caption{Ejemplo Documentación Swagger en el endpoint Registrar Investigador}
+        \end{figure}
+        
+        
+         \textit{Swagger} posee una interfaz llamada swagger.ui a la cual se puede acceder una vez arrancado el proyecto BakEnd para realizar pruebas y comprobar la documentación generada, como se muestra continuación. Dicha interfaz documenta tanto la información general de la aplicación, como los endpoints y los dtos.
+         \newline
+         
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{images/swaggergeneral.JPG}
+            \caption{Interfaz swagger.ui}
+        \end{figure}
+        
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{images/swaggerendpoint.JPG}
+            \caption{Ejemplo Documentación Swagger Researcher Controller}
+        \end{figure}
+        
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{images/swaggeruserdto.JPG}
+            \caption{Ejemplo Documentación Swagger UserDto}
+        \end{figure}
+        
+        \FloatBarrier
+        
+        
+        \subsubsection{\underline{Tests}}
+        A la hora de garantizar la calidad del software, se han realizado tests con Mockito y JUnit. Se han testeado todos los métodos de todas las clase que poseen lógica(Controladores y Servicios de Aplicación), probando todos los caminos y excepciones posibles, así como el camino feliz.
+        \newline
+        
+        En la aplicación hay un total de 157 tests realizados, los cuales se ejecutan cada vez que se instala la aplicación, garantizando así el correcto funcionamiento de la misma.
+        \newline
+        
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{images/numtests.JPG}
+            \caption{Tests realizados en la aplicación}
+        \end{figure}
+        
+        Para garantizar que se han testeado todos los caminos posibles, se ha conseguido un 100\% de cobertura en todas las clases con tests.
+        \newline
+        
+        
+          \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{images/coberturatests.JPG}
+            \caption{Cobertura de las clases testeadas}
+        \end{figure}
+        
 
         
         
