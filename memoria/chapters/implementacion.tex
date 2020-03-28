@@ -153,7 +153,7 @@
                 \end{figure}
                 
               
-                \item Entidades. \\
+                \item Entidades.  \\
                 Son los elementos encargados de interactuar con las bases de datos de nuestra aplicación. Estas entidades JPA, también llamadas POJO's(Plain Old Java Objects), se encuentran mapeadas mediante anotaciones y representan las tablas de nuestra base de datos relacional.
                 \newline
                 
@@ -278,6 +278,20 @@
         
         
     \subsection{Inicialización del proyecto}
-        \subsubsection{\underline{Local}}
-        \subsubsection{\underline{Remoto}}
+        A la hora de inicializar la aplicación BackEnd, al tratarse de un proyecto  Maven, lo primero que hay que ejecutar son los siguientes comandos: 
+        
+        \begin{enumerate}
+          \item\texttt{mvn clean}.\\
+          Elimina los archivos generados anteriormente y descarga las librerías añadidas como dependencias en el archivo pom.xml
+          \item\texttt{mvn install}. \\
+          Genera el archivo .jar definido en el pom.xml
+        \end{enumerate}
+        
+        Si queremos ejecutar la aplicación BakEnd de manera local, lo único que tenemos que hacer es ejecutar la clase \texttt{Main} de la aplicación en el entorno de desarrollo elegido, en este caso, Eclipse. \\
+        \newline
+        Si queremos ejecutar la aplicación BakEnd de manera remota, solo tenemos que almacenar el archivo .jar generado anteriormente en el servicio de Hosting escogido, en este caso, en Hostinger\cite{hostinger}.
+        
+        
+        
+        
     
