@@ -1,1 +1,33 @@
 \chapter{Mantenimiento}
+
+En este capítulo se van a desarrollar todas las tareas de mantenimiento realizadas, ya que, una vez desplegada la aplicación, hay que dar soporte a la misma, acercándose de esta manera a como sería un proyecto real. \\
+
+El mantenimiento es una parte vital del TFG y uno de los motivos por los cuales nos decantamos por escoger el mismo. Al hablar de mantenimiento nos referimos tanto a nuevas funcionalidades previamente no establecidas, corrección de errors y bugs, actualizaciones de funcionalidades ya implementadas, mejoras etc... \\
+
+Toda aplicación web necesita de tareas de mantenimiento, ya que el mercado y sus necesidades evolucionan de una manera vertiginosa y sino las aplicaciones se quedarían desfasadas. \\
+
+Con el objetivo de dedicarle el tiempo suficiente y necesario a las tareas de mantenimiento, la aplicación se desplegó lo más pronto posible, a finales de febrero.
+Una vez desplegada la aplicación, el médico Alejandro Rabanal y su equipo de investigadores nos dieron el feedback necesario para empezar las tareas de mantenimiento. \\
+
+A continuación se describe una lista de las tareas de mantenimiento solicitadas por el equipo de investigadores, ordenada por orden cronológico. \\
+\begin{itemize}
+  \item\textbf{Registro de nuevos administradores.} \\
+  La primera tarea a realizar una vez desplegada la aplicación fue dar de alta a usuarios con perfil Administrador, teniendo estos permiso para gestionar la mayoría de elementos de la aplicación. \\
+  \newline
+  Se procedió a dar de alta como administradores, con sus respectivos documentos de identificación, a Pablo Rabanal, Alejandro Rabanal, Sergio Pacheco, Eduardo Gonzalo y a otros dos investigadores del estudio más. \\
+  \newline
+  De esta manera dichos usuarios podían acceder a la aplicación con su perfil y empezar a probar las funcionalidades de la misma, dando un feedback temprano y preciso.
+  
+  \item\textbf{Imposibilidad de registrar investigadores extranjeros.} \\
+  Cuando un administrador quiere registrar a un nuevo investigador, a la hora de rellenar el formulario e introducir el campo DNI, este no admitia NIEs, de manera que es imposible registrar también a investigadores extranjeros. \\
+  
+  Este bug se solucionó añadiendo una nueva validación al campo DNI/NIE para que admitiese ambos formatos, pudiendo registrar a investigadores extranjeros.
+  
+  \item\textbf{El administrador no puede exportar los datos de todos los pacientes.} \\
+  Se requiere de una nueva funcionalidad que consiste en que el administrador pueda generar un documento de tipo excel que contenga los datos de todos los pacientes de todos los investigadores del estudio. \\
+  
+  Esta funcionalidad se implementó sin ningún problema destacable, añadiendo un botón el cual generaba el documento excel descargándolo a través del navegador en el dispositivo del usuario.
+
+\end{itemize}
+
+
