@@ -88,7 +88,7 @@ Estas fueron todas las funcionalidades añadidas al Product Backlog al principio
 Con nuestros artefactos listos y la primera reunión fijada para principios de Octubre comenzó nuestro primer sprint en Septiembre. Nuestro objetivo como se puede apreciar en el User Story Map anterior era el acceso a la aplicación como investigador y la posibilidad de rellenar test de pacientes. La idea era empezar con el modelo de datos de los test y de paso pensar en su extracción y después hacer el login, pero faltaban detalles sobre la estructura y limitaciones de los test así que intercambiamos el orden a la espera de información mas precisa. Visto lo cual comenzamos con el acceso a la aplicación.
 \newline
 
-A pesar de haber estado durante el mes de agosto viendo tutoriales y trasteando con las tecnologías al ponernos de verdad sobre el proyecto vimos lo verdes que estábamos. Eduardo por suerte en el trabajo que había comenzado ese mismo verano había tocado parte de las herramientas aunque no fuese en profundidad, pero Sergio no había oído casi hablar de herramientas como Angular o Spring Boot hasta hace un par de semanas. El primer mes se nos escapo de las manos prácticamente en configuración del software necesario y de los proyectos tanto en front como back, en la conexión de todo el sistema y el diseño de la simple pagina de login. Para cuando llego Octubre el consumo de tareas iba mucho mas lento de lo esperado y la primera reunión prácticamente solo sirvió para cerrar el diseño de la aplicación en lineas generales, la paleta de colores,el tipo de letra, el espaciado y tamaño, etc. Este retraso en las tareas y desajuste del orden de desarrollo se mantendría lamentablemente para el siguiente sprint aunque se iría ajustando en los siguientes. A continuación se recoge una captura del login, el cual inicialmente tenia una imagen distinta de fondo pero con la misma temática de tener al equipo médico en su ambiente de trabajo, los mismo colores claros entre blanco y azul y la misma letras negra grande.
+A pesar de haber estado durante el mes de agosto viendo tutoriales y trasteando con las tecnologías al ponernos de verdad sobre el proyecto vimos lo verdes que estábamos. Eduardo por suerte en el trabajo que había comenzado ese mismo verano había tocado parte de las herramientas aunque no fuese en profundidad, pero Sergio no había oído casi hablar de herramientas como Angular o Spring Boot hasta hace un par de semanas. El primer mes se nos escapo de las manos prácticamente en configuración del software necesario y de los proyectos tanto en front como back, la conexión de todo el sistema y el diseño de la simple pagina de login así como su funcionalidad. Para cuando llego Octubre el consumo de tareas iba mucho mas lento de lo esperado y la primera reunión prácticamente solo sirvió para cerrar el diseño de la aplicación en lineas generales, la paleta de colores,el tipo de letra, el espaciado y tamaño, etc, y clarificar mas detalles sobre el formulario de test para las citas. Este retraso en las tareas y desajuste del orden de desarrollo se mantendría lamentablemente para el siguiente sprint aunque se iría ajustando en los siguientes. A continuación se recoge una captura del login, el cual inicialmente tenia una imagen distinta de fondo pero con la misma temática de tener al equipo médico en su ambiente de trabajo, los mismo colores claros entre blanco y azul y la misma letra negra grande.
 \newline
 
  \begin{figure}[h]
@@ -97,3 +97,66 @@ A pesar de haber estado durante el mes de agosto viendo tutoriales y trasteando 
     \caption{Captura del login de la aplicación.}
 \end{figure}
 \newpage
+
+Tras este primer sprint con retraso el equipo de desarrollo al fin tenia todo listo y ordenado para trabajar en condiciones óptimas. Mientras Sergio se centraba en el formulario y el registro de pacientes de lleno Eduardo paso a las primeras tareas que no requerían el modelo de datos del test, el registro de investigadores y a su vez la creación y acceso del perfil de administrador. Al final de este segundo sprint el formulario estaba finalizado y los pacientes tenían su propio registro como se muestra en las siguientes figuras.
+\newline
+
+ \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/investigadorPacientes.jpg}
+    \caption{Vista principal del investigador con su lista de pacientes.}
+\end{figure}
+
+Esta captura muestra la imagen final de la vista principal del investigador con su lista de pacientes. En ese momento no existía aun el botón de generar excel ni el de arriba a la derecha en el que se lee "administrar". Por lo demás el diseño se ideo y se mantuvo así desde un primer momento en toda la pagina a excepción de los iconos, que vendrían a futuro como un nuevo requisito.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/testPacientes.jpg}
+    \caption{Formulario de test para pacientes.}
+\end{figure}
+
+En cuanto al formulario tanto el diseño como los campos (que eran imposible incluir en su totalidad en una captura) se crearon y mantuvieron como se ven en la figura anterior. Posteriormente se le añadirían algunas funcionalidades extra pero sin cambiar su aspecto.
+\newpage
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/adminInvestigadores.png}
+    \caption{Vista principal del administrador con la lista de investigadores.}
+\end{figure}
+
+En la figura anterior se observa la lista de investigadores en la ventana principal de administrador, con el mismo diseño que la de pacientes pero con dos botones añadidos que permitirían posteriormente modificar la contraseña de investigador y eliminarlo. Al lado izquierdo se ve el formulario de registro de investigador que aparece completo en la siguiente captura.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=6.cm,height=10.cm]{images/registrarInvestigadores.jpg}
+    \caption{Formulario para registrar nuevos investigadores como administrador.}
+\end{figure}
+\newpage
+
+Las claves de acceso a la aplicación son el DNI y la contraseña. Como se observa en la figura además se puede utilizar un NIE como clave, este detalle fue introducido a posteriori con el despliegue de la web ya que una de las investigadoras es extranjera.
+\newline
+
+Con estas funcionalidades implementadas la segunda release se llevo a cabo con todos las tareas consumidas a excepción de la extracción de datos, que seria lo primero a retomar en el siguiente sprint. El equipo médico mostró conformidad con todo del desarrollo hasta la fecha aunque solicito algunos añadidos para el formulario. Durante la demo realizada en la reunión el médico representante del equipo, Alejandro, noto que el formulario no daba indicaciones de que valores se esperaban en los diferentes campos y no daba suficiente información de los errores. Los miembros del equipo de desarrollo no sabíamos nada acerca de que valores serian validos o la información que les seria útil en un mensaje de error en el formulario así que Alejandro recopilo por cuenta propia todos estos datos y nos los envió en un documento por correo al par de días.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/rangosVariables.jpg}
+    \caption{Documento con rangos de variables y tipo de campos esperados en el formulario.}
+\end{figure}
+\newpage
+
+Estos valores se añadieron posteriormente al formulario en forma de tooltips, pequeños bocadillos de información al pasar el cursor sobre los nombres de cada campo del formulario.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/tooltip.jpg}
+    \caption{Tooltip de información sobre el rango de valores esperado en un campo del formulario.}
+\end{figure}
+
+Además se añadió un remarcado en rojo para cuando el valor estuviese fuera de ese rango o no fuese siquiera un numero y uno en verde cuando el contenido del campo cumpliese los requisitos establecidos.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/remarcadoRojo.jpg}
+    \caption{Remarcado de colores para visualizar si el valor cumple los requisitos del campo del formulario.}
+\end{figure}
