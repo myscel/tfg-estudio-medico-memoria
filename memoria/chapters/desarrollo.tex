@@ -160,3 +160,107 @@ Además se añadió un remarcado en rojo para cuando el valor estuviese fuera de
      \includegraphics[width=1\textwidth]{images/remarcadoRojo.jpg}
     \caption{Remarcado de colores para visualizar si el valor cumple los requisitos del campo del formulario.}
 \end{figure}
+\newpage
+
+En el siguiente sprint todas las funcionalidades se centraban en la modificación de los diferentes elementos de la aplicación, sin embargo tras hablar con el equipo médico se llevaron a cabo varios cambios en el orden de prioridad:
+
+\begin{itemize}
+    \item Las funcionalidades referentes al perfil (en este punto sobretodo la modificación de contraseña) se relegaron a una prioridad baja. Ciertamente la posibilidad de cambiar la contraseña por el usuario era importante para los médicos pero no mas que la visualización de los datos del formulario o las funcionalidades aun restantes de gestión para los usuarios.\newline
+    
+    \item Relacionado con lo dicho en el punto anterior los eliminar perfiles y filtros pasaros a una prioridad media y se pusieron al nivel de visualizar datos test. Estas historias de usuario pasaron a la release 3.\newline
+    
+    \item En cuanto a la historia de modificar citas y listarlas estas mantuvieron su prioridad pero su carga de trabajo, con todos los nuevos detalles de rangos y validaciones añadidos al formulario, se había vuelto abrumadora. El equipo lo comento con el representante de los médicos y este dio el visto bueno a posponerla ya que era una herramienta de corrección de errores y todo nuestro trabajo en el momento sobre el formulario se encaminaba a la prevención de los mismos al máximo.\newline
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=7.cm,height=7.cm]{images/calendario.jpg}
+    \caption{Calendario mejorado, mucho más fácil de manejar que escribir la fecha manualmente, lo que llevaba a errores.}
+    \end{figure}
+    
+      \item Por último, aunque no se añadiese una nueva, se mantuvo abierta la historia de "rellenar datos paciente" ya que durante todo este sprint se siguió trabajando en mejoras para el mismo y detalles que se iban comentando por correo con el equipo médico. \newline
+    
+    \item Por último, aunque no se añadiese una nueva, se mantuvo abierta la historia de "rellenar datos paciente" ya que durante todo este sprint se siguió trabajando en mejoras para el mismo y detalles que se iban comentando por correo con el equipo médico. \newline
+\end{itemize}
+\newpage
+
+Con esta nueva organización se continuo con el desarrollo. La historia de "Modificar contraseña investigador" se amplio, ya que suponía poco trabajo extra y resultaba interesante, a modificación de cualquier campo del investigador.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/modificarInvestigador.jpg}
+    \caption{Formulario para la modificación de datos de un investigador por parte del administrador.}
+\end{figure}
+
+Los listar, tanto pacientes como investigadores, fueron finalizados y junto con otros elementos visuales rediseñados para incluir iconos. Estos iconos fueron una propuesta del profesor director en la que nunca se pensó pero que ciertamente añadían usabilidad a la interfaz general de la aplicación.\newline
+
+En cuanto a la eliminación de perfiles como se comento en el punto de arranque del proyecto no esta permitido eliminar investigadores con pacientes asignados y los pacientes pueden eliminarse tengan o no citas realizadas, pero en el caso de tenerlas se pedirá una confirmación extra para evitar posibles problemas. En casi de confirmar la eliminación sus citas completadas por el momento así como el perfil del pacientes serán eliminadas de la base de datos.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/confirmacionEliminarPaciente.jpg}
+    \caption{Mensaje de confirmación para la eliminación de un paciente con algún test de sus citas relleno.}
+\end{figure}
+\newpage
+
+Se añadieron los filtros tanto para pacientes como para investigadores. En el caso de los investigadores se sometió a debate la posibilidad de implementar una lista desplegable en vez de un buscador por DNI escrito, pero el numero de investigadores (Unos 15) dejaba la lista algo larga como para ser cómoda y el buscador algo amplio para ser tan pocos. Finalmente se decanto por el buscador principalmente por mantener una concordancia y similitud con el sistema empleado para los pacientes.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/filtros.jpg}
+    \caption{Filtros para la búsqueda por DNI de investigador o identificador de paciente.}
+\end{figure}
+
+Terminada esta tercera release la reunión con el representante del equipo médico y el profesor directos del TFG se llevo a cabo. En cuanto al formulario de test para las citas quedo cerrado a excepción de un pequeño añadido que hizo ver el profesor: en los campos que puedan admitir o no decimales el mensaje de información sobre su contenido debería clarificarlo. Por la parte de gestiones de usuarios tanto modificación, eliminación o filtrado no hubo ninguna queja, aunque era de esperarse pues sus condiciones ya habían sido habladas múltiples veces tanto de forma presencial como por email. Con todo revisado y los detalles de algunas historias apuntados se procedió con el cuarto sprint, el ultimo con una gran carga de tareas.
+\newline
+
+Finalmente se llevo a cabo la extracción de datos de la aplicación a un Excel. En un primer momento se hizo dejando una linea para cada cita de cada paciente, pero por petición del equipo médico tras ver el resultado se modifico a una sola linea por paciente con sus dos citas consecutivas en la misma.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/extraerDatos.jpg}
+    \caption{Mensaje de confirmación de la extracción de datos y documento Excel resultante.}
+\end{figure}
+\newpage
+
+La visualización de los datos del test se implemento siguiendo el diseño del formulario de recopilación de datos pero listando los campos para facilitar su lectura. Además se mantuvieron los tooltip para permitir su consulta en todo momento y no ofuscar ninguna información.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/visualizarTest.jpg}
+    \caption{Fragmento de la visualización de un test realizado.}
+\end{figure}
+
+Se añadieron y mejoraron mensajes de error y modales de confirmación para la inserción de datos en la aplicación, ya fuese de usuario o de los propios test sobre pacientes.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/modales.jpg}
+    \caption{Modal de confirmación para el guardado de un test.}
+\end{figure}
+
+Se cerraron todas las historias que aun acumulaban modificaciones hasta la fecha como "rellenar datos paciente" y se completaron ambas historias de la sección de "Perfiles" con la modificación de contraseña propia para cada investigador y la visualización de sus datos.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=14.cm,height=4.cm]{images/perfil.jpg}
+    \caption{Perfil de investigador.}
+\end{figure}
+\newpage
+
+Por ultimo en este sprint se llevo a cabo la implementación de las historias "Modificar citas" y "Listar citas", que se llevaron una gran parte de la carga de trabajo del mismo. Para la lista de citas se decidió añadir una nueva historia de usuario "Filtrar citas por identificador de paciente" para dar alguna herramienta de filtrado en esta lista que sera presumiblemente la mas larga. Además se mantuvieron los filtros de menos a mayor ya implementados en anteriores listas. Por ultimo se añadió un pequeño botón de actualización sobre la lista ya que las citas son los componentes mas cambiantes de la aplicación y pueden estarse añadiendo frecuentemente al mismo tiempo que se consulta esta tabla. Para evitar que el usuario tenga que recargar la pagina para ver estos cambios y recordarle que pueden estarse sucediendo se añade este botón.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/listarCitas.jpg}
+    \caption{Perfil de investigador.}
+\end{figure}
+
+En cuanto a la modificación de las citas por parte del administrador se decidió mantener el estilo de la visualización de citas realizadas ya que era mas compacto pero añadiendo campos para poder rellenar aquellos datos que quisieran modificarse. Estas modificaciones por supuesto siguen los mismos criterios de entrada que el test original, reaccionan de igual manera con el patrón de colores a las inserciones validas o invalidas y tienen los mismos mensajes de error, a excepción por supuesto de que este formulario no requiere todos los campos rellenos.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/modificarCita.jpg}
+    \caption{Formulario de modificación para un test realizado sobre una cita.}
+\end{figure}
+
+Como se ha visto en las capturas y se recoge en el mapa de historias de usuario de la sección anterior con esto quedaba completada la mayor parte de la aplicación. La ultima reunión en diciembre de 2019 se llevo a cabo y aunque la siguiente técnicamente debía ser a finales de Enero con las festividades y los exámenes se tuvo que posponer a Febrero. En vistas de las fechas que se manejaban ya, como se comento anteriormente, se dejo de lado el apartado de estadísticas y se empezó a trabajar en el despliegue de la aplicación del que se hablara en un próximo capitulo. Así mismo los artefactos utilizados tanto para planificación como gestión se mantuvieron durante esta fase de despliegue y tras esta durante el mantenimiento del que igualmente se hablara en su propio capitulo.
