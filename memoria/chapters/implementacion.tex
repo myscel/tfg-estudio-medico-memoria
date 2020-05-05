@@ -26,6 +26,49 @@
     
     \subsection{Arquitectura de la aplicación Angular}
     
+    Angular es una herramienta que se sustenta en la idea de modular del código en componentes. Estos componentes son fragmentos de código independientes que la pagina web carga o descarga según las acciones del usuario. 
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/componentesAngular.jpg}
+    \caption{Estructura de componentes en Angular.}
+    \end{figure}
+    
+    En el caso de nuestro proyecto se emplearon cuatro grandes componentes (admin, form, login y researcher) así como algunos mas pequeños que se desglosaran mas adelante. El componente app que los engloba es creado por Angular automáticamente y sirve como base para montar y desmontar el resto de componentes.
+    
+    \subsubsection{\underline{login}}
+
+    El primer componente que se creo en la aplicación y sobre el que se desarrollo el diseño general que se seguiría en el resto de la misma. Como todos los componentes de esta aplicación se compone de un archivo HTML con la estructura del elemento, un archivo CSS con el diseño del mismo y finalmente un archivo de TypeScript con los comportamientos posibles del componente.\newline
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/loginComponent.jpg}
+    \caption{Estructura del componentes de login.}
+    \end{figure}
+    \FloatBarrier
+    
+    En cuanto a la estructura el elemento se compone solamente de la cabecera, un formulario para introducir usuario y contraseña y un modal para mensajes de error. Aprovecharemos que este es uno de los formularios mas sencillos de la aplicación para explicarlo un poco mas en detalle, ya que estos son una parte fundamental de la misma.
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/loginHTML.jpg}
+    \caption{Código HTML del login.}
+    \end{figure}
+    \FloatBarrier
+    
+    Los formularios constan de un formGroup con nombre propio (loginForm en este caso) que engloba uno o varios elementos de control con nombre propio (formControlName, en este caso dni y password) como campos de entrada de datos para el formulario y finalmente un botón para disparar la validación del formulario, cuyo resultado se representa como mensaje de error en el modal que hay justo a continuación o con la resolución del mismo, que en este caso permitiría acceder a la aplicación con el perfil introducido. Este proceso de validación y respuesta se produce en el archivo de TypeScript.
+ 
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/loginTS.jpg}
+    \caption{Código TypeScript del login.}
+    \end{figure}
+    \FloatBarrier
+    
+    En la figura 4.5 anterior se observan dos bloques, uno es el del método ngOnInit, que es lanzado por el componente justo al montar la página y enlaza los campos del formGroup explicado anteriormente con las variables que se utilizan en este archivo mediante sus nombres (dni y password). El segundo bloque recoge el método onSubmit que se lanza al presionar el botón del formulario y como se puede apreciar primero realiza las validaciones, las cuales en caso de ser erróneas rellenan el modal con un mensaje de error, y finalmente llama al método doLogin que conecta al usuario a la aplicación si todas han sido correctas. Sin embargo estas validaciones son llamadas desde dos elementos externos a este documento, el dniInputService y el passwordInputService. Estos servicios son una colección de métodos que no se encuentran dentro de ningun componente y  sirven tanto para ser utilizados de forma recurrente por cualquiera de estos como para conectar la aplicación Front al BackEnd\newline
+    
+    
+    
     \subsection{Inicialización del proyecto}
         \subsubsection{\underline{Local}}
         \subsubsection{\underline{Remoto}}
