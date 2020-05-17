@@ -70,3 +70,79 @@
 	Los sprints serán de una duración mensual. Se opta por esta cuantía porque al estar uno de los miembros aún con clases y otro trabajando a jornada completa no se estima que en una semana el desarrollo pueda tener un avance suficientemente significativo. Estos sprints se iniciarán con una reunión de planificación con el tutor del proyecto y el representante del equipo médico, estipulando qué se hará y cómo. Asimismo, concluirán con otra reunión de misma índole que mostrará una demo funcional al representante y recogerá su feedback, para acto seguido comenzar con la reunión de planificación del siguiente sprint. Se decide aunar así el inicio y final del sprint en una sola reunión para evitar problemas de horarios difíciles de encajar por parte de los cuatro. Tras esta reunión con todos los miembros se realizará una pequeña reunión de retrospectiva solo del equipo de desarrollo para determinar si la metodología de trabajo funciona y qué se podría modificar o añadir.\newline
 
 
+\chapter{Introduction}
+This chapter details the motivation that led to the realization of this project, the objectives that it comprises and the guidelines that were taken to achieve it.
+
+
+    \section{Objective}
+    
+    This Final Degree Project seeks the implementation of a web portal that allows the collection of data of interest for the study of the medical team. To do this, it will have personalized forms with the fields of interest requested by them, which will be filled in by doctors in routine appointments with patients who have consented to participate in the project. These data will then be accessible both via the web and in a downloadable Excel file from the portal itself.\newline
+	
+    In order to adjust the final product to the needs of the team, the application will be launched with 
+    enough time (approximately in February 2020) so that it can be tested and modified to measure. This is especially important since the study will extend many months beyond the end of this TFG.\newline
+	
+	The final objective, and of course the most important one, is that all this development serves as a tool to adjust the evaluation criteria in patients with type 2 diabetes mellitus, allowing to find guidelines to improve in their life habits that may prevent more cases of this disease in the future.\newpage
+	
+	\section{Motivation}
+    
+    Our first motivation to get into this project is the technologies used in it. Both participants are interested in focusing their career on web technologies, in fact one of them is already working as a full-stack developer. The project also gives freedom to be implemented without any design or performance restrictions, which presents an ideal scenario to experiment during its development.\newline
+	
+	The other main reason for opting for this project is its proximity to a real project. The client, the application, the deadlines and the needs of this project are not something created for an academic environment, like other developments already carried out during the degree, but a real problem that requires an effective solution with all the people who will end up using it. In addition, the project will require post-launch maintenance, another area never explored in the degree and which will be a valuable experience for our future.\newline
+	
+	Last but not least note that one of the members, Sergio, already has good experiences with a previous project in the medical field developed alone for a company in Switzerland and Eduardo has always had an interest in healthy lifestyle habits and nutrition, possible main remedy for diabetes extracted from the results of this study.\newpage
+
+	\section{Work methodology}
+    
+    The project will be planned under the standards of the Scrum\cite{Scrum} methodology, although it will slightly loosen its temporary limits. Since there are only two members it is not necessary to place such daily emphasis on the organization to maintain order. The first thing will be to define how we will maintain the three basic pillars of the methodology: \textbf{transparency, inspection and adaptation}.
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/Scrum.png}
+    \caption{Workflow on Scrum.}
+    \end{figure}
+    
+    \subsection{Transparency}
+
+    To keep both members up to date with any progress or variation in the process we will be using Trello's online tool, which will allow us to see them in real time. This will be structured in the following way:
+    
+    \begin{itemize}
+    \item Two columns will be created, one with the list of pending tasks for the current sprint and another with the tasks currently in progress. In addition, a column will be created for each sprint in which all the completed tasks will be stored. Each task can be encapsulated in one or more of these categories: deployment, documentation, FrontEnd, bug, research, data model, pending resolution (questions for the the next meeting with the tutor), BackEnd, variety, resolved (questions already solved in previous meetings that stay as a reminder). In addition, each task will have one or more labels indicating the developers who have worked on it.\newline
+
+    
+     \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/Trello.jpg}
+    \caption{Example image of Trello's online tool.}
+    \end{figure}
+    \newpage
+    
+    \item  Also, all the project code will be uploaded and updated in a repository, in this case GitHub\cite{github}, through which you can see an accurate history of the changes made in each commit along with explanatory comments from the developer that realised them.\newline
+
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/GitHubFront.jpg}
+    \caption{Example image of FrontEnd repository on GuitHub.}
+    \end{figure}
+    \end{itemize}
+    
+    \subsection{Inspection}
+    Con el fin de mantener este principio, nuestro repositorio no solo albergará código, sino también un espacio separado para todos los artefactos derivados de Scrum, así como la documentación que se vaya creando durante el proceso que sea relevante a efectos de esta memoria. Estos artefactos serán por tanto accesibles constantemente por ambos miembros, los cuales avisarán en caso de cualquier añadido o modificación para que su compañero pueda revisarlo.\newpage
+    
+    In order to uphold this principle, our repository will not only store code, but also a separate space for all the artifacts derived from Scrum, as well as the documentation that is created during the process that is relevant for the purposes of this report. These artifacts will therefore be constantly accessible by both members, who will notify in case of any addition or modification so that their partner can review them.\newline
+    
+    \begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{images/GitHubMemoria.jpg}
+    \caption{Example image of all the documents about this report on GitHub.}
+    \end{figure}
+    \newpage
+    
+     \subsection{Adaptation}
+    
+    At the end of each sprint there will be a meeting with both the project tutor and a representative of the medical team to review the process and obtain feedback on it. Errors or urgent changes extracted from these meetings will become the highest priority of the project and their resolution will be immediately notified to both meeting attendees. In addition, to keep the project as close as possible to the client's needs, any significant change in the middle of a sprint will be notified by mail in advance to them.\newline
+    
+    In addition of all the documentation and artifacts mentioned available during the development, the members will keep a daily contact talking about what has been done, what is going to be done and the problems they are encountering, which will act as Daily Scrums.\newline
+	
+	As for the typical Scrum roles, in our case, they will not be used. The Product Owner will be replaced with the direct and constant communication of the members with the client that will ensure the prioritization of the mos valuable features for the him during the development. The Scrum Master will not be precise since both team members have experience using agile methodologies, both in the career and outside in their own work or projects. Therefore, only the development team will exist and this will supply the functions for the rest of the roles.\newline
+	
+	Sprints will be monthly. This amount is chosen because one of the members is still with classes and the other is working full time, it is not estimated that in one week the development can have a  significant advance. These sprints will begin with a planning meeting with the project tutor and the medical team representative, stipulating what will be done. Likewise, they will conclude with another meeting of the same nature that will show a functional demo to the representative and collect their feedback, to then begin with the planning meeting for the next sprint. It was decided to combine the start and end of the sprint in a single meeting in order to avoid problems with schedules that were difficult for all four to fit into. After this meeting with all the members there will be a small retrospective meeting only for the development team to determine if the work methodology works and what could be modified or added.
