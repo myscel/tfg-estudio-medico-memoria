@@ -1,6 +1,6 @@
 \chapter{Desarrollo}
 
-En este capitulo se relata el proceso que fue el desarrollo de esta aplicación web. Primero veremos la planificación inicial hablando de los diferentes artefactos que se generaron, posteriormente de cómo estos evolucionaron y se fueron adaptando, por último, del resultado final del desarrollo y lo aprendido en el camino.
+En este capítulo se relata el proceso de desarrollo de esta aplicación web. Primero veremos la planificación inicial hablando de los diferentes artefactos que se generaron, posteriormente de cómo estos evolucionaron y se fueron adaptando, por último, del resultado final del desarrollo y lo aprendido en el camino.
 
 \section{Arranque del desarrollo}
 
@@ -87,16 +87,16 @@ Junto a este artefacto se creó también un User Story Map, que permite visualiz
     \caption{Mapa de historias de usuario.}
 \end{figure}
 
-Este mapa recoge todas las historias relatadas en este apartado y marca las divisiones en releases que seguirá el próximo para hablar de como fue el desarrollo de la aplicación, así que puede ser consultado en cualquier momento para clarificar de que secciones de este apartado habla cualquier punto del desarrollo durante los sprints. Notese que en ocasiones se hablará de sprints y en otras de releases, ya que en nuestro caso cada uno de los primeros coincide con una de las segundas.
+Este mapa recoge todas las historias relatadas en este apartado y marca las divisiones en releases que seguirá el próximo para hablar de como fue el desarrollo de la aplicación, así que puede ser consultado en cualquier momento para clarificar de que secciones de este apartado habla cualquier punto del desarrollo durante los sprints. Nótese que en ocasiones se hablará de sprints y en otras de releases, ya que en nuestro caso cada uno de los primeros coincide con una de las segundas.
 
 \newpage
 
 \section{Desarrollo durante los sprints}
 
-Con nuestros artefactos listos y la primera reunión fijada para principios de octubre comenzó nuestro primer sprint en septiembre. Nuestro objetivo como se puede apreciar en el User Story Map anterior era el acceso a la aplicación como investigador y la posibilidad de rellenar test de pacientes. La idea era empezar con el modelo de datos de los test y de paso pensar en su extracción y después hacer el login, pero faltaban detalles sobre la estructura y limitaciones de los test así que intercambiamos el orden a la espera de información mas precisa. Visto lo cual comenzamos con el acceso a la aplicación.
+Con nuestros artefactos listos y la primera reunión fijada para principios de octubre comenzó nuestro primer sprint en septiembre. Nuestro objetivo, como se puede apreciar en el User Story Map anterior, era el acceso a la aplicación como investigador y la posibilidad de rellenar tests de pacientes. La idea era empezar con el modelo de datos de los test, pensar en su extracción y después hacer el login, sin embargo, faltaban detalles sobre la estructura y limitaciones de los tests así que intercambiamos el orden a la espera de información más precisa. Visto lo cual comenzamos con el acceso a la aplicación.
 \newline
 
-A pesar de haber estado durante el mes de agosto viendo tutoriales y trasteando con las tecnologías al ponernos de verdad sobre el proyecto vimos lo verdes que estábamos. Eduardo por suerte en el trabajo que había comenzado ese mismo verano había tocado parte de las herramientas aunque no fuese en profundidad, pero Sergio no había oído casi hablar de herramientas como Angular o Spring Boot hasta hace un par de semanas. El primer mes se nos escapó de las manos prácticamente en configuración del software necesario y de los proyectos tanto en front como back, la conexión de todo el sistema y el diseño de la simple página de login así como su funcionalidad. Para cuando llegó octubre el consumo de tareas iba mucho más lento de lo esperado y la primera reunión prácticamente solo sirvió para cerrar el diseño de la aplicación en líneas generales, la paleta de colores,el tipo de letra, el espaciado y tamaño, etc, y clarificar más detalles sobre el formulario de test para las citas. Este retraso en las tareas y desajuste del orden de desarrollo se mantendría lamentablemente para el siguiente sprint aunque se iría ajustando en los siguientes. A continuación se recoge una captura del login (ver figura 3.7), el cual inicialmente tenía una imagen distinta de fondo pero con la misma temática de tener al equipo médico en su ambiente de trabajo, los mismos colores claros entre blanco y azul y la misma letra negra grande.
+A pesar de haber estado durante el mes de agosto viendo tutoriales y practicando con las tecnologías al ponernos de verdad sobre el proyecto comprobamos que aún teníamos que estudiar en profundidad muchos aspectos. Eduardo por suerte en el trabajo que había comenzado ese mismo verano había utilizado parte de las herramientas aunque no fuese en profundidad, pero Sergio conocía prácticamente herramientas como Angular o Spring Boot hasta hace un par de semanas. El primer mes se nos escapó de las manos prácticamente en configuración del software necesario y de los proyectos tanto en front como back, la conexión de todo el sistema y el diseño de la simple página de login así como su funcionalidad. Para cuando llegó octubre el consumo de tareas iba mucho más lento de lo esperado y la primera reunión prácticamente solo sirvió para cerrar el diseño de la aplicación en líneas generales, la paleta de colores,el tipo de letra, el espaciado y tamaño, etc, y clarificar más detalles sobre el formulario de test para las citas. Este retraso en las tareas y desajuste del orden de desarrollo se mantendría lamentablemente para el siguiente sprint aunque se iría ajustando en los siguientes. A continuación se recoge una captura del login (ver figura 3.7).
 \newline
 
  \begin{figure}[h]
@@ -106,7 +106,7 @@ A pesar de haber estado durante el mes de agosto viendo tutoriales y trasteando 
 \end{figure}
 \newpage
 
-Tras este primer sprint con retraso el equipo de desarrollo al fin tenía todo listo y ordenado para trabajar en condiciones óptimas. Mientras Sergio se centraba en el formulario y el registro de pacientes, Eduardo pasó a las primeras tareas que no requerían el modelo de datos del test, el registro de investigadores y a su vez la creación y acceso del perfil de administrador. Al final de este segundo sprint el formulario estaba finalizado y los pacientes tenían su propio registro como se muestra en las siguientes figuras.
+Tras este primer sprint con retraso, el equipo de desarrollo al fin tenía todo listo y ordenado para trabajar en condiciones óptimas. Mientras Sergio se centraba en el formulario y el registro de pacientes, Eduardo pasó a las primeras tareas que no requerían el modelo de datos del test, el registro de investigadores y, a su vez, la creación y acceso del perfil de administrador. Al final de este segundo sprint el formulario estaba finalizado y los pacientes tenían su propio registro como se muestra en las siguientes figuras.
 \newline
 
  \begin{figure}[h]
@@ -115,7 +115,7 @@ Tras este primer sprint con retraso el equipo de desarrollo al fin tenía todo l
     \caption{Vista principal del investigador con su lista de pacientes.}
 \end{figure}
 
-Esta captura muestra la imagen final de la vista principal del investigador con su lista de pacientes. En ese momento no existía aún el botón de generar Excel ni el de arriba a la derecha en el que se lee ``administrar''. Por lo demás el diseño se ideó y se mantuvo así desde un primer momento en toda la página a excepción de los iconos, que vendrían a futuro como un nuevo requisito.
+Esta captura (figura 3.8) muestra la imagen final de la vista principal del investigador con su lista de pacientes. En ese momento no existía aún el botón de generar Excel ni el de arriba a la derecha en el que se lee ``administrar''. Por lo demás el diseño se ideó y se mantuvo así desde un primer momento en toda la página a excepción de los iconos, que vendrían a futuro como un nuevo requisito.
 
 \begin{figure}[h]
     \centering
@@ -123,7 +123,7 @@ Esta captura muestra la imagen final de la vista principal del investigador con 
     \caption{Formulario de test para pacientes.}
 \end{figure}
 
-En cuanto al formulario tanto el diseño como los campos (que eran imposible incluir en su totalidad en una captura) se crearon y mantuvieron como se ven en la figura anterior. Posteriormente se le añadirían algunas funcionalidades extra pero sin cambiar su aspecto.
+En cuanto al formulario, tanto el diseño como los campos (que eran imposible incluir en su totalidad en una captura) se crearon y mantuvieron como se ven en la figura anterior. Posteriormente se le añadirían algunas funcionalidades extra pero sin cambiar su aspecto.
 \newpage
 
 \begin{figure}[h]
@@ -132,7 +132,7 @@ En cuanto al formulario tanto el diseño como los campos (que eran imposible inc
     \caption{Vista principal del administrador con la lista de investigadores.}
 \end{figure}
 
-En la figura anterior se observa la lista de investigadores en la ventana principal de administrador, con el mismo diseño que la de pacientes pero con dos botones añadidos que permitirían posteriormente modificar la contraseña de investigador y eliminarlo. Al lado izquierdo se ve el formulario de registro de investigador que aparece completo en la siguiente captura.
+En la figura anterior (3.10) se observa la lista de investigadores en la ventana principal de administrador, con el mismo diseño que la de pacientes pero con dos botones añadidos que permitirían posteriormente modificar la contraseña de investigador y eliminarlo. Al lado izquierdo se ve el formulario de registro de investigador que aparece completo en la siguiente captura.
 
 \begin{figure}[h]
     \centering
@@ -253,7 +253,7 @@ Se cerraron todas las historias que aún acumulaban modificaciones hasta la fech
 \end{figure}
 \newpage
 
-Por último en este sprint se llevó a cabo la implementación de las historias \textit{Modificar citas} y \textit{Listar citas}, que se llevaron una gran parte de la carga de trabajo del mismo. Para la lista de citas se decidió añadir una nueva historia de usuario \textit{Filtrar citas por identificador de paciente} para dar alguna herramienta de filtrado en esta lista que será presumiblemente la más larga. Además, se mantuvieron los filtros de menor a mayor ya implementados en anteriores listas. Se añadió un pequeño botón de actualización sobre la lista ya que las citas son los componentes mas cambiantes de la aplicación y pueden estarse añadiendo frecuentemente al mismo tiempo que se consulta esta tabla. Para evitar que el usuario tenga que recargar la página para ver estos cambios y recordarle que pueden estarse sucediendo se añade este botón.
+Por último, en este sprint se llevó a cabo la implementación de las historias \textit{Modificar citas} y \textit{Listar citas}, que se llevaron una gran parte de la carga de trabajo del mismo. Para la lista de citas se decidió añadir una nueva historia de usuario \textit{Filtrar citas por identificador de paciente} para dar alguna herramienta de filtrado en esta lista que será presumiblemente la más larga. Además, se mantuvieron los filtros de menor a mayor ya implementados en anteriores listas. Se añadió un pequeño botón de actualización sobre la lista ya que las citas son los componentes mas cambiantes de la aplicación y pueden estarse añadiendo frecuentemente al mismo tiempo que se consulta esta tabla. Para evitar que el usuario tenga que recargar la página para ver estos cambios y recordarle que pueden estarse sucediendo se añade este botón.
 
 \begin{figure}[h]
     \centering
