@@ -7,7 +7,7 @@ El mantenimiento es una parte vital del TFG y uno de los motivos por los cuales 
 Toda aplicación web necesita de tareas de mantenimiento, ya que el mercado y sus necesidades evolucionan de una manera vertiginosa y sino las aplicaciones se quedarían desfasadas. \\
 
 Con el objetivo de dedicarle el tiempo suficiente y necesario a las tareas de mantenimiento, la aplicación se desplegó lo más pronto posible, a finales de febrero.
-Una vez desplegada la aplicación, el médico Alejandro Rabanal y su equipo de investigadores nos dieron el feedback necesario para empezar las tareas de mantenimiento. \\
+Una vez desplegada la aplicación, el médico Alejandro Rabanal y su equipo de investigadores nos dieron el \textit{feedback} necesario para empezar las tareas de mantenimiento. \\
 
 A continuación se describe una lista de las tareas de mantenimiento solicitadas por el equipo de investigadores, ordenada por orden cronológico. \\
 \begin{itemize}
@@ -16,17 +16,17 @@ A continuación se describe una lista de las tareas de mantenimiento solicitadas
   \newline
   Se procedió a dar de alta como administradores, con sus respectivos documentos de identificación, a Pablo Rabanal, Alejandro Rabanal, Sergio Pacheco, Eduardo Gonzalo y a otros dos investigadores del estudio más. \\
   \newline
-  De esta manera dichos usuarios podían acceder a la aplicación con su perfil y empezar a probar las funcionalidades de la misma, dando un feedback temprano y preciso.
+  De esta manera dichos usuarios podían acceder a la aplicación con su perfil y empezar a probar las funcionalidades de la misma, dando un \textit{feedback} temprano y preciso.
   
   \item\textbf{Imposibilidad de registrar investigadores extranjeros.} \\
-  Cuando un administrador quiere registrar a un nuevo investigador, a la hora de rellenar el formulario e introducir el campo DNI, este no admitia NIEs, de manera que es imposible registrar también a investigadores extranjeros. \\
+  Cuando un administrador quiere registrar a un nuevo investigador, a la hora de rellenar el formulario e introducir el campo DNI, este no admitía NIEs, de manera que es imposible registrar también a investigadores extranjeros. \\
   
   Este bug se solucionó añadiendo una nueva validación al campo DNI/NIE para que admitiese ambos formatos, pudiendo registrar a investigadores extranjeros.
   
   \item\textbf{El administrador no puede exportar los datos de todos los pacientes.} \\
-  Se requiere de una nueva funcionalidad que consiste en que el administrador pueda generar un documento de tipo excel que contenga los datos de todos los pacientes de todos los investigadores del estudio. \\
+  Se requiere de una nueva funcionalidad que consiste en que el administrador pueda generar un documento de tipo Excel que contenga los datos de todos los pacientes de todos los investigadores del estudio. \\
   
-  Esta funcionalidad se implementó sin ningún problema destacable, añadiendo un botón el cual generaba el documento excel descargándolo a través del navegador en el dispositivo del usuario.
+  Esta funcionalidad se implementó sin ningún problema destacable, añadiendo un botón el cual generaba el documento Excel descargándolo a través del navegador en el dispositivo del usuario.
   
    \item\textbf{Falta de información en los mensajes de error de formato.} \\
    A la hora de registrar un investigador, los administradores de nuestro proyecto nos solicitaron una mejora. Al rellenar el campo DNI/NIE, si el valor introducido no es correcto y el formato es érroneo, se debe de añadir al mensaje de error mostrado información del formato válido.
@@ -36,22 +36,22 @@ A continuación se describe una lista de las tareas de mantenimiento solicitadas
     \item\textbf{Falta de información en los campos de la cita.} \\
     Se nos hizo saber que faltaba información relativa al formato correcto en la gran mayoría de los campos del formulario de rellenar cita, tanto indicando el formato del campo como del rango de valores admitidos. \\
     
-    La mejora solicitada se implementó de manera exitosa a través de tooltips o pequeñas etiquetas en los campos, ayudando al usuario a saber como rellenar los campos.
+    La mejora solicitada se implementó de manera exitosa a través de \textit{tooltips} o pequeñas etiquetas en los campos, ayudando al usuario a saber como rellenar los campos.
     
      \item\textbf{Cambio de formato en los campos de la cita.} \\
      Tras un tiempo de pruebas, los investigadores nos solicitaron una nueva mejora. Tanto el campo de la cita \textit{Tiempo de exposición solar}, como el campo \textit{Ejercicio Físico}, en un principio, admitían números con decimales. La mejora consistía en que estos dos campos no admitiesen decimales, ya que carecía de sentido que alguien tomase el sol, por ejemplo, 50.3 minutos al día, además de que esto provocaba posibles errores a la hora de registrar una cita. \\
      
-     La mejora se implementó con éxito, cambiando el formato de ambos campos tanto en base de datos, como en BackEnd y FrontEnd, además de cambiar las validaciones para que ajustarse a dicha mejora.
+     La mejora se implementó con éxito, cambiando el formato de ambos campos tanto en base de datos, como en \textit{backend} y \textit{frontend}, además de cambiar las validaciones para ajustarse a dicha mejora.
      
       \item\textbf{Necesidad de nuevas validaciones en los campos de la cita.} \\
       Dado que los campos \textit{Puntuación SPF} y \textit{Uso de crema SPF} están relacionados, se nos solicitó añadir nuevas validaciones a la hora de rellenar dichos campos para completar la cita. \\ 
       
       La mejora consiste en que si el usuario marca como falso el campo \textit{Uso de crema SPF}, el valor del campo \textit{Puntuación SPF} debe ser cero para que tenga sentido. De la misma manera, si el usuario marca como verdadero el campo \textit{Uso de crema SPF}, el valor del campo \textit{Puntuación SPF} debe ser mayor que cero.
       
-      \item\textbf{Bug encontrado a la hora de generar documento excel.} \\
-      Los investigadores se dieron cuenta de que, al generar un documento excel con los datos de las citas de los pacientes, por cada cita se generaba una fila. Esto no era el comportamiento esperado, ya que se especificó que se generase una única fila por paciente conteniendo información de todas sus citas.\\
+      \item\textbf{Bug encontrado a la hora de generar documento Excel.} \\
+      Los investigadores se dieron cuenta de que, al generar un documento Excel con los datos de las citas de los pacientes, por cada cita se generaba una fila. Esto no era el comportamiento esperado, ya que se especificó que se generase una única fila por paciente conteniendo información de todas sus citas.\\
       
-      Este bug necesitó de bastante trabajo, ya que no resultó fácil  el tratamiento de los datos y la generación del documento excel. Al final se realizaron los cambios oportunos de manera exitosa.
+      Este \textit{bug} necesitó de bastante trabajo, ya que no resultó fácil  el tratamiento de los datos y la generación del documento Excel. Al final se realizaron los cambios oportunos de manera exitosa.
       
        \item\textbf{Falta de criterios de inclusión y exclusión al registrar un paciente.} \\
        Los investigadores nos solicitaron mejorar una funcionalidad ya implementada. A la hora de registrar un nuevo paciente, tras introducir el número de identificación del paciente, debía de implementarse una ventana emergente en la cual el usuario rellenaba una serie de criterios de inclusión y exclusión.
