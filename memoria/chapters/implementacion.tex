@@ -1,9 +1,9 @@
 \chapter{Implementación}
-     En este capítulo se explican los detalles de la implementación de las partes FrontEnd y BackEnd de nuestro proyecto, tanto de la generación del proyecto inicial como de la infraestructura del mismo.
+     En este capítulo se explican los detalles de la implementación de las partes \textit{frontend} y \textit{backend} de nuestro proyecto, tanto de la generación del proyecto inicial como de la infraestructura del mismo.
     
     
-    \section{FrontEnd}
-    En esta sección se va a hablar del proyecto Angular el cual compone la parte FrontEnd de nuestra aplicación. Este framework nos ofrece un desarrollo más rápido con respecto a otros frameworks, ya que se estructura en diferentes componentes web y genera una página web dinámicamente.
+    \section{Frontend}
+    En esta sección se va a hablar del proyecto Angular el cual compone la parte \textit{frontend} de nuestra aplicación. Este \textit{framework} nos ofrece un desarrollo más rápido con respecto a otros \textit{frameworks}, ya que se estructura en diferentes componentes web y genera una página web dinámicamente.
     \subsection{Generación Proyecto Angular}
     Para la generación de un proyecto base en Angular se utilizó \textit{Angular Cli}, un herramienta de línea de comandos que facilita la creación y gestión de proyectos Angular y de sus diferentes componentes.
     \newline
@@ -34,11 +34,11 @@
     \caption{Estructura de componentes en Angular.}
     \end{figure}
     
-    En el caso de nuestro proyecto se emplearon cuatro grandes componentes (admin, form, login y researcher) así como algunos mas pequeños que se desglosaran mas adelante. El componente app que los engloba es creado por Angular automáticamente y sirve como base para montar y desmontar el resto de componentes.
+    En el caso de nuestro proyecto se emplearon cuatro grandes componentes (admin, form, login y researcher) así como algunos mas pequeños que se desglosarán más adelante. El componente app que los engloba es creado por Angular automáticamente y sirve como base para montar y desmontar el resto de componentes.
     
     \subsubsection{\underline{login}}
 
-    El primer componente que se creo en la aplicación y sobre el que se desarrollo el diseño general que se seguiría en el resto de la misma. Como todos los componentes de esta aplicación se compone de un archivo HTML con la estructura del elemento, un archivo CSS con el diseño del mismo y finalmente un archivo de TypeScript con los comportamientos posibles del componente.\newline
+    El primer componente que se creó en la aplicación y sobre el que se desarrolló el diseño general que se seguiría en el resto de la misma. Como todos los componentes de esta aplicación se compone de un archivo HTML con la estructura del elemento, un archivo CSS con el diseño del mismo y finalmente un archivo de TypeScript con los comportamientos posibles del componente.\newline
     
     \begin{figure}[h]
     \centering
@@ -47,7 +47,7 @@
     \end{figure}
     \FloatBarrier
     
-    En cuanto a la estructura el elemento se compone solamente de la cabecera, un formulario para introducir usuario y contraseña y un modal para mensajes de error. Aprovecharemos que este es uno de los formularios mas sencillos de la aplicación para explicarlo un poco mas en detalle, ya que estos son una parte fundamental de la misma.
+    En cuanto a la estructura el elemento se compone solamente de la cabecera, un formulario para introducir usuario y contraseña y un modal para mensajes de error. Aprovecharemos que este es uno de los formularios más sencillos de la aplicación para explicarlo un poco más en detalle, ya que estos son una parte fundamental de la misma.
     
     \begin{figure}[h]
     \centering
@@ -65,7 +65,7 @@
     \end{figure}
     \FloatBarrier
     
-    En la figura 4.5 anterior se observan dos bloques, uno es el del método ngOnInit, que es lanzado por el componente justo al montar la página y enlaza los campos del formGroup explicado anteriormente con las variables que se utilizan en este archivo mediante sus nombres (dni y password). El segundo bloque recoge el método onSubmit que se lanza al presionar el botón del formulario y como se puede apreciar primero realiza las validaciones, las cuales en caso de ser erróneas rellenan el modal con un mensaje de error, y finalmente llama al método doLogin que conecta al usuario a la aplicación si todas han sido correctas. Sin embargo estas validaciones son llamadas desde dos elementos externos a este documento, el dniInputService y el passwordInputService. Estos servicios son una colección de métodos que no se encuentran dentro de ningún componente y  sirven tanto para ser utilizados de forma recurrente por cualquiera de estos como para conectar la aplicación Front al BackEnd.
+    En la figura anterior se observan dos bloques, uno es el del método ngOnInit, que es lanzado por el componente justo al montar la página y enlaza los campos del formGroup explicado anteriormente con las variables que se utilizan en este archivo mediante sus nombres (dni y password). El segundo bloque recoge el método onSubmit que se lanza al presionar el botón del formulario y como se puede apreciar primero realiza las validaciones, las cuales en caso de ser erróneas rellenan el modal con un mensaje de error, y finalmente llama al método doLogin que conecta al usuario a la aplicación si todas han sido correctas. Sin embargo estas validaciones son llamadas desde dos elementos externos a este documento, el dniInputService y el passwordInputService. Estos servicios son una colección de métodos que no se encuentran dentro de ningún componente y  sirven tanto para ser utilizados de forma recurrente por cualquiera de estos como para conectar la aplicación Front al \textit{backend}.
     
     \begin{figure}[h]
     \centering
@@ -74,7 +74,7 @@
     \end{figure}
     \FloatBarrier
     
-    Al igual que los componentes, los servicios están englobados en cuatro grandes grupos: admin y reseracher, los dos perfiles existentes en la aplicación y subject y form, los dos elementos principales a manejar en la misma. El resto de grupos de servicios corresponden a métodos puntuales que no encajaban en ninguno de estos grupos, de los cuales hablaremos según vayan apareciendo. En el caso del login sus servicios están incluidos en el grupo de researcher, ya que fue el primer perfil para el que se diseño el mismo.
+    Al igual que los componentes, los servicios están englobados en cuatro grandes grupos: admin y reseracher, los dos perfiles existentes en la aplicación y subject y form, los dos elementos principales a manejar en la misma. El resto de grupos de servicios corresponden a métodos puntuales que no encajaban en ninguno de estos grupos, de los cuales hablaremos según vayan apareciendo. En el caso del login sus servicios están incluidos en el grupo de researcher, ya que fue el primer perfil para el que se diseñó el mismo.
     
      \begin{figure}[h]
     \centering
@@ -83,7 +83,7 @@
     \end{figure}
     \FloatBarrier
     
-    Estos servicios engloban las validaciones de campos (los servicios con el sobrenombre input) tanto para hacer login en la aplicación como para registrar investigadores. El servicio researcher-service comprende todos los métodos de acceso al BackEnd referentes a este perfil.\newpage
+    Estos servicios engloban las validaciones de campos (los servicios con el sobrenombre input) tanto para hacer login en la aplicación como para registrar investigadores. El servicio researcher-service comprende todos los métodos de acceso al \textit{backend} referentes a este perfil.\newpage
     
     \subsubsection{\underline{form}}
     
@@ -96,7 +96,7 @@
     \end{figure}
     \FloatBarrier
     
-    El primer componente corresponde al formulario de la figura 4.9, el cual tiene una estructura similar a la explicada para el de login solo que con una longitud de 600 lineas. Así mismo, tiene un componente de TypeScript en el que se manejan las validaciones, mensajes de error y el guardado del contenido en la base de datos. Se sirve de los servicios del form-service para realizar las validaciones de todos sus campos y de varios métodos del researcher-service para realizar los accesos a la base de datos a través del BackEnd.
+    El primer componente corresponde al formulario de la figura, el cual tiene una estructura similar a la explicada para el de login solo que con una longitud de 600 líneas. Así mismo, tiene un componente de TypeScript en el que se manejan las validaciones, mensajes de error y el guardado del contenido en la base de datos. Se sirve de los servicios del form-service para realizar las validaciones de todos sus campos y de varios métodos del researcher-service para realizar los accesos a la base de datos a través del \textit{backend}.
     
     \begin{figure}[h]
     \centering
@@ -105,7 +105,7 @@
     \end{figure}
     \FloatBarrier
     
-    En la figura anterior se puede observar el método encargado de guardar la información del test en el sistema. Utiliza una url para saber donde encontrar el BackEnd que le esta ofreciendo los metodos, en la cual se utiliza una variable externa exportada desde constantService. Esta variable siemplemente sirve como manera rápida de cambiar entre la url de acceso local, con la que los desarrolladores pueden trabajar en sus bases de datos privadas, y la url que conecta con el servidor operativo en Hostinger. Mediante la terminación de esta url, que se añade dentro de cada método, el BackEnd es capaz de distinguir a que controlador y que método esta haciendo la llamada el FrontEnd, el cual además le pasa los datos (en este caso el test relleno) como un parámetro junto a la llamada.\newline
+    En la figura anterior se puede observar el método encargado de guardar la información del test en el sistema. Utiliza una url para saber donde encontrar el \textit{backend} que le está ofreciendo los métodos, en la cual se utiliza una variable externa exportada desde constantService. Esta variable simplemente sirve como manera rápida de cambiar entre la url de acceso local, con la que los desarrolladores pueden trabajar en sus bases de datos privadas, y la url que conecta con el servidor operativo en Hostinger. Mediante la terminación de esta url, que se añade dentro de cada método, el \textit{backend} es capaz de distinguir a qué controlador y qué método esté haciendo la llamada el \textit{frontend}, el cual además le pasa los datos (en este caso el test relleno) como un parámetro junto a la llamada.\newline
     
     El segundo componente corresponde a la figura 4.20 y es solo la visualización de los datos de un test ya realizado, obtenidos en una sola llamada al cargar el componente y no comprende ningún otro comportamiento.\newpage
     
@@ -120,7 +120,7 @@
     \end{figure}
     \FloatBarrier
     
-    El primer componente corresponde a la vista con el listado de test realizados en la aplicación por todos los investigadores y a la figura 4.24, que es la modificación de una de estas. Para el componente del listado se trae de la base de datos todos los test realizados con el investigador que los realizo y se rellena una tabla dinámicamente con dicha información.
+    El primer componente corresponde a la vista con el listado de test realizados en la aplicación por todos los investigadores y a la figura 4.24, que es la modificación de una de estas. Para el componente del listado se trae de la base de datos todos los test realizados con el investigador que los realizó y se rellena una tabla dinámicamente con dicha información.
     
     \begin{figure}[h]
     \centering
@@ -129,9 +129,9 @@
     \end{figure}
     \FloatBarrier
     
-    La tabla emplea una variable en el archivo de TypeScript asociado en la que se han guardado los test llamada appointments (al principio del bucle for) y para cada iteración escribe el numero de identificación del paciente, si es el test es de su cita 1 o 2 y un botón de editar que permite abrir la vista al segundo componente.\newline
+    La tabla emplea una variable en el archivo de TypeScript asociado en la que se han guardado los test llamada appointments (al principio del bucle for) y para cada iteración escribe el número de identificación del paciente, si es el test es de su cita 1 o 2 y un botón de editar que permite abrir la vista al segundo componente.\newline
     
-    El siguiente componente de administrador es edit-researcher-admin, que es una sencilla vista con un formulario que permite editar nombre, apellidos y la contraseña de un investigador que se puede ver en la figura 4.16. A este componente se accede mediante una tabla, muy similar a la utilizada para los test, que se encuentra en el componente de researcher-admin. Este es a su vez la vista principal del administrador nada mas identificarse en la aplicación y contiene dicha tabla de investigadores y un formulario que se puede observar en la figura 4.11 que permite el registro de investigadores. El ultimo componente, referente a los pacientes, incluye una tabla en la  linea de las anteriores y unos filtros para la misma como se puede ver en la figura 4.18.\newpage
+    El siguiente componente de administrador es edit-researcher-admin, que es una sencilla vista con un formulario que permite editar nombre, apellidos y la contraseña de un investigador que se puede ver en la figura 4.16. A este componente se accede mediante una tabla, muy similar a la utilizada para los test, que se encuentra en el componente de researcher-admin. Este es a su vez la vista principal del administrador nada más identificarse en la aplicación y contiene dicha tabla de investigadores y un formulario que se puede observar en la figura 4.11 que permite el registro de investigadores. El último componente, referente a los pacientes, incluye una tabla en la  línea de las anteriores y unos filtros para la misma como se puede ver en la figura 4.18.\newpage
     
     \subsubsection{\underline{researcher}}
     
@@ -153,20 +153,20 @@
     \end{figure}
     \FloatBarrier
     
-    En la figura vemos como un observable utiliza un método subscribe que dentro incluye el código del que hablaremos. Este observable es básicamente una llamada asíncrona a un método, en este caso registrar paciente, a la cual nos suscribimos para manejar su resultado cuando se obtenga. Dentro del método vemos un primer bloque de código para responseData, el cual es llamado en caso de devolver el método a parte de su contenido un código HTTP 200, que significa que todo a ido sin problemas. En caso de devolver otro código se accede al segundo bloque en el que se activa el modal con el mensaje de error y se muestra una explicación del mismo mas ilustrativa que solo un número. Estos códigos de error han sido decidimos por los desarrolladores siguiendo la filosofía original de HTTP y por ese motivo se conoce exactamente cuales se pueden dar y su significado.\newpage
+    En la figura vemos como un observable utiliza un método subscribe que dentro incluye el código del que hablaremos. Este observable es básicamente una llamada asíncrona a un método, en este caso registrar paciente, a la cual nos suscribimos para manejar su resultado cuando se obtenga. Dentro del método vemos un primer bloque de código para responseData, el cual es llamado en caso de devolver el método a parte de su contenido un código HTTP 200, que significa que todo ha ido sin problemas. En caso de devolver otro código se accede al segundo bloque en el que se activa el modal con el mensaje de error y se muestra una explicación del mismo más ilustrativa que solo un número. Estos códigos de error han sido decididos por los desarrolladores siguiendo la filosofía original de HTTP y por ese motivo se conoce exactamente cuales se pueden dar y su significado.\newpage
     
     \subsection{Inicialización del proyecto}
     
         \subsubsection{\underline{Local}}
         
-        Para la inicialización del proyecto en local es necesario tener algún entorno de desarrollo compatible, como Visual Studio Code el cual hemos utilizado nosotros, y tener instalada la interfaz de linea de comandos de Angular (Angular CLI). Una vez instalada solo nevesitamos abrir el proyecto en nuestro entorno, abrir un terminal y ejecutar ng serve. En ocasiones el instalador de paquetes npm tiene problemas para reconocer el comando (nos ha ocurrido en algunos equipos) y sera necesario escribir una sentencia algo mas completa: npm run ng serve.
+        Para la inicialización del proyecto en local es necesario tener algún entorno de desarrollo compatible, como Visual Studio Code el cual hemos utilizado nosotros, y tener instalada la interfaz de línea de comandos de Angular (Angular CLI). Una vez instalada solo necesitamos abrir el proyecto en nuestro entorno, abrir un terminal y ejecutar ng serve. En ocasiones el instalador de paquetes npm tiene problemas para reconocer el comando (nos ha ocurrido en algunos equipos) y sera necesario escribir una sentencia algo más completa: npm run ng serve.
         \subsubsection{\underline{Remoto}}
-        En el caso de querer acceder a la aplicación en remoto no se requiere de ningún requisito previo más que utilizar un navegador. La pagina desde la que se accede a la aplicación es http://tfg-estudio-medico.com/
+        En el caso de querer acceder a la aplicación en remoto no se requiere de ningún requisito previo más que utilizar un navegador. La página desde la que se accede a la aplicación es http://tfg-estudio-medico.com/
     
     
-    \section{BackEnd}
+    \section{Backend}
     
-     En esta sección se va a hablar del proyecto Java Spring Boot el cual compone la parte BackEnd de nuestra aplicación. La aplicación es una API-REST, la cual será consumida por el FrontEnd mediente llamadas en protocolo HTTP. 
+     En esta sección se va a hablar del proyecto Java Spring Boot el cual compone la parte \textit{backend} de nuestra aplicación. La aplicación es una API-REST, la cual será consumida por el \textit{frontend} mediante llamadas en protocolo HTTP. 
      
      
     \subsection{Generación Proyecto Java Spring Boot}
@@ -178,18 +178,20 @@
     \caption{Proyecto inicial Spring Boot}
     \end{figure}
     
-    Una vez generado el proyecto Sprinig Boot, hubo de importarse el mismo en el entorno de desarrollo Eclipse.
+     \FloatBarrier
+
+    Una vez generado el proyecto Spring Boot, hubo de importarse el mismo en el entorno de desarrollo Eclipse.
     
     
     \subsection{Arquitectura de la aplicación Java Spring Boot}
     La arquitectura de la aplicación Spring Boot desarrollada se divide principalmente en los apartados de código, documentación y tests.
 
         \subsubsection{\underline{Código}}
-        El proyecto BackEnd de la aplicación está escrito en Java 8, y dividido en los siguientes bloques o paquetes, los cuales se describen a continuación.
+        El proyecto \textit{backend} de la aplicación está escrito en Java 8, y dividido en los siguientes bloques o paquetes, los cuales se describen a continuación.
         
         \begin{itemize}
             \item\textbf{Controladores}  \\
-            Son los elementos del código encargados de recibir las diferentes peticiones HTTP y mapear los objetos enviados en las mismas, ya sea en el cuerpo de la petición en caso de ser una petición de tipo POST, o en la propia url si es una petición de tipo GET. Además de esto, son los encargados de realizar la lógica de navegación, llamando a la capa de Negocio y, con el resultado obtenido, generar una respuesta a la parte FrontEnd de la aplicación.
+            Son los elementos del código encargados de recibir las diferentes peticiones HTTP y mapear los objetos enviados en las mismas, ya sea en el cuerpo de la petición en caso de ser una petición de tipo POST, o en la propia url si es una petición de tipo GET. Además de esto, son los encargados de realizar la lógica de navegación, llamando a la capa de Negocio y, con el resultado obtenido, generar una respuesta a la parte \textit{frontend} de la aplicación.
             \newline
             
             Para identificar los diferentes controladores de nuestra aplicación, la nomenclatura de los mismos siempre terminará con la palabra \textit{Controller}.
@@ -204,7 +206,7 @@
                 \begin{figure}[h]
                     \centering
                      \includegraphics[width=0.8\textwidth]{images/controllers.JPG}
-                    \caption{Controladores del proyecto BackEnd}
+                    \caption{Controladores del proyecto \textit{backend}}
                 \end{figure}
                 
                 \begin{figure}[h]
@@ -231,7 +233,7 @@
              \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.8\textwidth]{images/business.JPG}
-                \caption{Servicios de Aplicación del proyecto BackEnd}
+                \caption{Servicios de Aplicación del proyecto \textit{backend}}
             \end{figure}
             
             \begin{figure}[h]
@@ -245,7 +247,7 @@
             \item\textbf{Repositorios}  \\
             Son los elementos encargados de comunicarse con la base de datos correspodiente, ya sea guardando recursos, actualizar, listar, borrar etc... \\
             \newline
-            Todos los repositorios extienden de la clase \textit{JpaRepository}, una clase perteneciente a SpringData, la cual implementa el código necesario para realizar una query a la base de datos. De esta manera no ha sido necesario implementar dichas clases.
+            Todos los repositorios extienden de la clase \textit{JpaRepository}, una clase perteneciente a SpringData, la cual implementa el código necesario para realizar una llamada a la base de datos. De esta manera no ha sido necesario implementar dichas clases.
             \newline 
             
             Para identificar los diferentes repositorios de de nuestra aplicación, la nomenclatura de los mismos siempre terminará con la palabra \textit{Repository}.
@@ -258,7 +260,7 @@
             \begin{figure}[h]
                 \centering
                 \includegraphics[width=0.8\textwidth]{images/repository.JPG}
-                \caption{Repositorios del proyecto BackEnd}
+                \caption{Repositorios del proyecto \textit{backend}}
             \end{figure}
             
             \begin{figure}[h]
@@ -297,7 +299,7 @@
                   \begin{figure}[h]
                         \centering
                         \includegraphics[width=0.8\textwidth]{images/entity.JPG}
-                        \caption{Entidades del proyecto BackEnd}
+                        \caption{Entidades del proyecto \textit{backend}}
                     \end{figure}
             
                     \begin{figure}[h]
@@ -322,7 +324,7 @@
                     \begin{figure}[h]
                         \centering
                         \includegraphics[width=0.8\textwidth]{images/dto.JPG}
-                        \caption{Dtos del proyecto BackEnd}
+                        \caption{Dtos del proyecto \textit{backend}}
                     \end{figure}
             
                     \begin{figure}[h]
@@ -339,10 +341,10 @@
             
         \end{itemize}
         \subsubsection{\underline{Documentación}}
-        A la hora de documentar la aplicación BackEnd, por una parte, se utilizó \textit{Javadoc} al principio de cada clase Java, y por otro lado, se utilizó \textit{Swagger}. 
+        A la hora de documentar la aplicación \textit{backend}, por una parte, se utilizó \textit{Javadoc} al principio de cada clase Java, y por otro lado, se utilizó \textit{Swagger}. 
         \newline
         
-        Para utilizar el framework \textit{Swagger} en la aplicación, hubo de añadir las correspondientes dependencias en el archivo \textit{pom.xml}.
+        Para utilizar el \textit{framework} \textit{Swagger} en la aplicación, hubo de añadir las correspondientes dependencias en el archivo \textit{pom.xml}.
         \newline
         
         \begin{figure}[h]
@@ -351,16 +353,16 @@
             \caption{Dependencias Swagger añadidas en pom.xml}
         \end{figure}
         
-        \textit{Swagger} nos permitió documentar tanto los endpoints como los dtos de nuestra aplicación a través de anotaciones, las cuales se añadieron en las respectivas clases implicadas.
+        \textit{Swagger} nos permitió documentar tanto los puntos de acceso como los dtos de nuestra aplicación a través de anotaciones, las cuales se añadieron en las respectivas clases implicadas.
         
           \begin{figure}[h]
             \centering
             \includegraphics[width=1\textwidth]{images/swaggerexample.JPG}
-            \caption{Ejemplo Documentación Swagger en el endpoint Registrar Investigador}
+            \caption{Ejemplo Documentación \textit{Swagger} en el endpoint Registrar Investigador}
         \end{figure}
         
         
-         \textit{Swagger} posee una interfaz llamada swagger.ui a la cual se puede acceder una vez arrancado el proyecto BakEnd para realizar pruebas y comprobar la documentación generada, como se muestra continuación. Dicha interfaz documenta tanto la información general de la aplicación, como los endpoints y los dtos.
+         \textit{Swagger} posee una interfaz llamada swagger.ui a la cual se puede acceder una vez arrancado el proyecto \textit{backend} para realizar pruebas y comprobar la documentación generada, como se muestra continuación. Dicha interfaz documenta tanto la información general de la aplicación, como los puntos de acceso y los dtos.
          \newline
          
           \begin{figure}[h]
@@ -385,7 +387,7 @@
         
         
         \subsubsection{\underline{Tests}}
-        A la hora de garantizar la calidad del software, se han realizado tests con Mockito y JUnit. Se han testeado todos los métodos de todas las clase que poseen lógica(Controladores y Servicios de Aplicación), probando todos los caminos y excepciones posibles, así como el camino feliz.
+        A la hora de garantizar la calidad del \textit{software}, se han realizado tests con Mockito y JUnit. Se han testeado todos los métodos de todas las clase que poseen lógica(Controladores y Servicios de Aplicación), probando todos los caminos y excepciones posibles, así como el camino feliz.
         \newline
         
         En la aplicación hay un total de 157 tests realizados, los cuales se ejecutan cada vez que se instala la aplicación, garantizando así el correcto funcionamiento de la misma.
@@ -406,12 +408,13 @@
             \includegraphics[width=1\textwidth]{images/coberturatests.JPG}
             \caption{Cobertura de las clases testeadas}
         \end{figure}
+        \FloatBarrier
         
 
         
         
     \subsection{Inicialización del proyecto}
-        A la hora de inicializar la aplicación BackEnd, al tratarse de un proyecto  Maven, lo primero que hay que ejecutar son los siguientes comandos: 
+        A la hora de inicializar la aplicación \textit{backend}, al tratarse de un proyecto  Maven, lo primero que hay que ejecutar son los siguientes comandos: 
         
         \begin{enumerate}
           \item\texttt{mvn clean}.\\
@@ -420,9 +423,9 @@
           Genera el archivo .jar definido en el pom.xml
         \end{enumerate}
         
-        Si queremos ejecutar la aplicación BakEnd de manera local, lo único que tenemos que hacer es ejecutar la clase \texttt{Main} de la aplicación en el entorno de desarrollo elegido, en este caso, Eclipse. \\
+        Si queremos ejecutar la aplicación \textit{backend} de manera local, lo único que tenemos que hacer es ejecutar la clase \texttt{Main} de la aplicación en el entorno de desarrollo elegido, en este caso, Eclipse. \\
         \newline
-        Si queremos ejecutar la aplicación BakEnd de manera remota, solo tenemos que almacenar el archivo .jar generado anteriormente en el servicio de Hosting escogido, en este caso, en Hostinger\cite{hostinger}.
+        Si queremos ejecutar la aplicación \textit{backend} de manera remota, solo tenemos que almacenar el archivo .jar generado anteriormente en el servicio de Hosting escogido, en este caso, en Hostinger\cite{hostinger}.
         
         
         
