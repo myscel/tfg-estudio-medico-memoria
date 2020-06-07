@@ -5,7 +5,7 @@
 \usepackage[spanish]{babel}
 %Options: Sonny, Lenny, Glenn, Conny, Bjornstrup
 \usepackage[Sonny]{fncychap}
-\usepackage[nottoc,numbib]{tocbibind}
+\usepackage[nottoc]{tocbibind}
 \usepackage[section]{placeins}
 
 
@@ -95,14 +95,17 @@
     \input{chapters/introduccion.tex}
     \input{chapters/tecnologias.tex}
     \input{chapters/desarrollo}
-    %\input{chapters/implementacion.tex}
+    \input{chapters/implementacion.tex}
     \input{chapters/despliegue.tex}
-    %\input{chapters/mantenimiento.tex}
+    \input{chapters/mantenimiento.tex}
     \input{chapters/conclusiones/conclusiones}
     \input{chapters/conclusiones/conclusions}
-    %\input{chapters/contribuciones}
+    \input{chapters/contribuciones}
 
-    \bibliographystyle{unsrt}
-    \bibliography{references}
+\medskip
+
+\bibliographystyle{ieeetr}
+
+\bibliography{references}
     
 \end{document}
