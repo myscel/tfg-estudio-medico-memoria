@@ -6,8 +6,6 @@
     En esta sección se va a hablar del proyecto Angular el cual compone la parte \textit{frontend} de nuestra aplicación. Este \textit{framework} nos ofrece un desarrollo más rápido con respecto a otros \textit{frameworks}, ya que se estructura en diferentes componentes web y genera una página web dinámicamente.
     \subsection{Generación Proyecto Angular}
     Para la generación de un proyecto base en Angular se utilizó \textit{Angular Cli}, un herramienta de línea de comandos que facilita la creación y gestión de proyectos Angular y de sus diferentes componentes.
-    \newline
-    
     \textit{Angular Cli}, al tratarse de  una herramienta NodeJS, requiere tenerlo instalado en nuestro sistema operativo. Para ello la primera tarea a realizar es instalar NodeJS a través de su página oficial\cite{nodejs}, escogiendo la versión que soporte nuestro sistema operativo.
  
     A continuación, a través del terminal que nos proporciona la herramienta de desarrollo \textit{Visual Studio Code}, ejecutamos el comando \texttt{npm install -g @angular/cli@latest}, el cual nos instala \textit{Angular Cli} en la última versión disponible.
@@ -85,7 +83,7 @@
     \end{figure}
     \FloatBarrier
     
-    Estos servicios engloban las validaciones de campos (los servicios con el sobrenombre input) tanto para hacer login en la aplicación como para registrar investigadores. El servicio researcher-service comprende todos los métodos de acceso al \textit{backend} referentes a este perfil.\newpage
+    Estos servicios engloban las validaciones de campos (los servicios con el sobrenombre input) tanto para hacer login en la aplicación como para registrar investigadores. El servicio researcher-service comprende todos los métodos de acceso al \textit{backend} referentes a este perfil.
     
     \subsubsection{\underline{form}}
     
@@ -163,7 +161,7 @@
         
         Para la inicialización del proyecto en local es necesario tener algún entorno de desarrollo compatible, como Visual Studio Code el cual hemos utilizado nosotros, y tener instalada la interfaz de línea de comandos de Angular (Angular CLI). Una vez instalada solo necesitamos abrir el proyecto en nuestro entorno, abrir un terminal y ejecutar \texttt{ng serve}. En ocasiones el instalador de paquetes npm tiene problemas para reconocer el comando (nos ha ocurrido en algunos equipos) y sera necesario escribir una sentencia algo más completa: \texttt{npm run ng serve}.
         \subsubsection{\underline{Remoto}}
-        En el caso de querer acceder a la aplicación en remoto no se requiere de ningún requisito previo más que utilizar un navegador. La página desde la que se accede a la aplicación es http://tfg-estudio-medico.com/
+        En el caso de querer acceder a la aplicación en remoto no se requiere de ningún requisito previo más que utilizar un navegador. La página desde la que se accedía a la aplicación es http://tfg-estudio-medico.com/, la cual se utilizó de manera temporal para hacer pruebas y actualmente no se encuentra disponible. 
     
     
     \section{Backend}
@@ -172,7 +170,7 @@
      
      
     \subsection{Generación Proyecto Java Spring Boot}
-    Para la generación del proyecto inicial se utilizó Spring Initializr\cite{springinitializr}, a través de su página web. Escogimos gestionar las dependencias del proyecto con Maven dado el alto grado de familiaridad que poseemos con esta tecnología. A continuación se escogió el lenguaje Java para implementar la aplicación debido a sus características intrínsecas(polimorfismo y herencia). Para finalizar se añadieron los paquetes de Web y JPA, necesarios para gestionar las conexiones externas y para la capa de persistencia.
+    Para la generación del proyecto inicial se utilizó Spring Initializr\cite{springinitializr}, a través de su página web. Escogimos gestionar las dependencias del proyecto con Maven dado el alto grado de familiaridad que poseemos con esta tecnología. A continuación se escogió el lenguaje Java para implementar la aplicación debido a sus características intrínsecas (polimorfismo y herencia). Para finalizar se añadieron los paquetes de Web y JPA, necesarios para gestionar las conexiones externas y para la capa de persistencia.
     
     \begin{figure}[h]
     \centering
@@ -285,7 +283,7 @@
                 
                  \begin{figure}[h]
                 \centering
-                \includegraphics[width=0.9\textwidth]{images/role.JPG}
+                \includegraphics[width=0.6\textwidth]{images/role.JPG}
                 \caption{Ejemplo Dominio Enumerado Role}
                 \end{figure}
                 
@@ -293,7 +291,7 @@
                 
               
                 \item Entidades.  \\
-                Son los elementos encargados de interactuar con las bases de datos de nuestra aplicación. Estas entidades JPA, también llamadas POJO's(Plain Old Java Objects), se encuentran mapeadas mediante anotaciones y representan las tablas de nuestra base de datos relacional.
+                Son los elementos encargados de interactuar con las bases de datos de nuestra aplicación. Estas entidades JPA, también llamadas POJO's (Plain Old Java Objects), se encuentran mapeadas mediante anotaciones y representan las tablas de nuestra base de datos relacional.
                 \newline
                 
                 
@@ -315,11 +313,11 @@
             \FloatBarrier
                 
                 
-                \item Dtos(Data Transfer Objects). \\
+                \item Dtos (Data Transfer Objects). \\
                 Son los elementos encargados de mapear los objetos de tipo JSON enviados en las peticiones HTTP para ser tratados en la aplicación. También se encargan de devolver la información necesaria mediante una respuesta HTTP.
                 \newline
                 
-                 Para identificar a los dtos(Data Transfer Objects) de nuestra aplicación, la nomenclatura de los misms siempre terminará con la palabra \textit{Dto}.
+                 Para identificar a los dtos (Data Transfer Objects) de nuestra aplicación, la nomenclatura de los misms siempre terminará con la palabra \textit{Dto}.
                 \newline
                 
                 De esta manera, los controladores de la aplicación tratarán los dtos y los mapearán a entidades para ser tratadas en la capa de Negocio, proporcionando seguridad y robustez a la aplicación, evitando posibles inyecciones de código y protegiendo los campos sensibles que no deban mostrarse en el exterior.
@@ -391,7 +389,7 @@
         
         
         \subsubsection{\underline{Tests}}
-        A la hora de garantizar la calidad del \textit{software}, se han realizado tests con Mockito y JUnit. Se han testeado todos los métodos de todas las clase que poseen lógica(Controladores y Servicios de Aplicación), probando todos los caminos y excepciones posibles, así como el camino feliz.
+        A la hora de garantizar la calidad del \textit{software}, se han realizado tests con Mockito y JUnit. Se han testeado todos los métodos de todas las clase que poseen lógica (Controladores y Servicios de Aplicación), probando todos los caminos y excepciones posibles, así como el camino feliz.
         \newline
         
         En la aplicación hay un total de 157 tests realizados, los cuales se ejecutan cada vez que se instala la aplicación, garantizando así el correcto funcionamiento de la misma.
