@@ -107,7 +107,7 @@
     
     En la figura anterior se puede observar el método encargado de guardar la información del test en el sistema. Utiliza una url para saber donde encontrar el \textit{backend} que le está ofreciendo los métodos, en la cual se utiliza una variable externa exportada desde constantService. Esta variable simplemente sirve como manera rápida de cambiar entre la url de acceso local, con la que los desarrolladores pueden trabajar en sus bases de datos privadas, y la url que conecta con el servidor operativo en Hostinger. Mediante la terminación de esta url, que se añade dentro de cada método, el \textit{backend} es capaz de distinguir a qué controlador y qué método esté haciendo la llamada el \textit{frontend}, el cual además le pasa los datos (en este caso el test relleno) como un parámetro junto a la llamada.\newline
     
-    El segundo componente corresponde a la figura 4.20 y es solo la visualización de los datos de un test ya realizado, obtenidos en una sola llamada al cargar el componente y no comprende ningún otro comportamiento.\newpage
+    El segundo componente corresponde a la figura 3.20 y es solo la visualización de los datos de un test ya realizado, obtenidos en una sola llamada al cargar el componente y no comprende ningún otro comportamiento.\newpage
     
     \subsubsection{\underline{admin}}
     
@@ -120,7 +120,7 @@
     \end{figure}
     \FloatBarrier
     
-    El primer componente corresponde a la vista con el listado de test realizados en la aplicación por todos los investigadores y a la figura 4.24, que es la modificación de una de estas. Para el componente del listado se trae de la base de datos todos los test realizados con el investigador que los realizó y se rellena una tabla dinámicamente con dicha información.
+    El primer componente corresponde a la vista con el listado de test realizados en la aplicación por todos los investigadores y a la figura 3.24, que es la modificación de una de estas. Para el componente del listado se trae de la base de datos todos los test realizados con el investigador que los realizó y se rellena una tabla dinámicamente con dicha información.
     
     \begin{figure}[h]
     \centering
@@ -131,7 +131,7 @@
     
     La tabla emplea una variable en el archivo de TypeScript asociado en la que se han guardado los test llamada appointments (al principio del bucle for) y para cada iteración escribe el número de identificación del paciente, si es el test es de su cita 1 o 2 y un botón de editar que permite abrir la vista al segundo componente.\newline
     
-    El siguiente componente de administrador es edit-researcher-admin, que es una sencilla vista con un formulario que permite editar nombre, apellidos y la contraseña de un investigador que se puede ver en la figura 4.16. A este componente se accede mediante una tabla, muy similar a la utilizada para los test, que se encuentra en el componente de researcher-admin. Este es a su vez la vista principal del administrador nada más identificarse en la aplicación y contiene dicha tabla de investigadores y un formulario que se puede observar en la figura 4.11 que permite el registro de investigadores. El último componente, referente a los pacientes, incluye una tabla en la  línea de las anteriores y unos filtros para la misma como se puede ver en la figura 4.18.\newpage
+    El siguiente componente de administrador es edit-researcher-admin, que es una sencilla vista con un formulario que permite editar nombre, apellidos y la contraseña de un investigador que se puede ver en la figura 3.16. A este componente se accede mediante una tabla, muy similar a la utilizada para los test, que se encuentra en el componente de researcher-admin. Este es a su vez la vista principal del administrador nada más identificarse en la aplicación y contiene dicha tabla de investigadores y un formulario que se puede observar en la figura 3.11 que permite el registro de investigadores. El último componente, referente a los pacientes, incluye una tabla en la  línea de las anteriores y unos filtros para la misma como se puede ver en la figura 3.18.\newpage
     
     \subsubsection{\underline{researcher}}
     
@@ -144,7 +144,7 @@
     \end{figure}
     \FloatBarrier
     
-    Como se observa en la figura anterior existen dos componentes para este perfil. El primero implementa la vista principal del investigador, donde se ve una tabla con los pacientes que tiene asociados y un pequeño campo para introducir nuevos pacientes mediante su código de identificación como se puede ver en la figura 4.8. Incluye también un modal para mensajes de error y un formulario de inclusión. Este formulario mediante CSS aparece sobre el resto del contenido al añadir un paciente para solicitar que marques si se cumplen todos los criterios de admisión (mayor de 18 años, al menos una visita previa en el centro, etc). Aprovecharemos este componente para explicar como se manejan los errores y las llamadas de observables.
+    Como se observa en la figura anterior existen dos componentes para este perfil. El primero implementa la vista principal del investigador, donde se ve una tabla con los pacientes que tiene asociados y un pequeño campo para introducir nuevos pacientes mediante su código de identificación como se puede ver en la figura 3.8. Incluye también un modal para mensajes de error y un formulario de inclusión. Este formulario mediante CSS aparece sobre el resto del contenido al añadir un paciente para solicitar que marques si se cumplen todos los criterios de admisión (mayor de 18 años, al menos una visita previa en el centro, etc). Aprovecharemos este componente para explicar como se manejan los errores y las llamadas de observables.
     
     \begin{figure}[h]
     \centering
