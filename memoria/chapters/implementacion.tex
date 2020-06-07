@@ -24,7 +24,7 @@
     
     \subsection{Arquitectura de la aplicación Angular}
     
-    Angular es una herramienta que se sustenta en la idea de modular del código en componentes. Estos componentes son fragmentos de código independientes que la pagina web carga o descarga según las acciones del usuario. 
+    Angular es una herramienta que se sustenta en la idea de modular del código en componentes. Estos componentes son fragmentos de código independientes que la página web carga o descarga según las acciones del usuario. 
     
     \begin{figure}[h]
     \centering
@@ -34,7 +34,7 @@
     
      \FloatBarrier
     
-    En el caso de nuestro proyecto se emplearon cuatro grandes componentes (admin, form, login y researcher) así como algunos mas pequeños que se desglosarán más adelante. El componente app que los engloba es creado por Angular automáticamente y sirve como base para montar y desmontar el resto de componentes.
+    En el caso de nuestro proyecto se emplearon cuatro grandes componentes (admin, form, login y researcher) así como algunos más pequeños que se desglosarán más adelante. El componente app que los engloba es creado por Angular automáticamente y sirve como base para montar y desmontar el resto de componentes.
     
     \subsubsection{\underline{login}}
 
@@ -65,7 +65,7 @@
     \end{figure}
     \FloatBarrier
     
-    En la figura anterior se observan dos bloques, uno es el del método ngOnInit, que es lanzado por el componente justo al montar la página y enlaza los campos del formGroup explicado anteriormente con las variables que se utilizan en este archivo mediante sus nombres (dni y password). El segundo bloque recoge el método onSubmit que se lanza al presionar el botón del formulario y como se puede apreciar primero realiza las validaciones, las cuales en caso de ser erróneas rellenan el modal con un mensaje de error, y finalmente llama al método doLogin que conecta al usuario a la aplicación si todas han sido correctas. Sin embargo estas validaciones son llamadas desde dos elementos externos a este documento, el dniInputService y el passwordInputService. Estos servicios son una colección de métodos que no se encuentran dentro de ningún componente y  sirven tanto para ser utilizados de forma recurrente por cualquiera de estos como para conectar la aplicación Front al \textit{backend}.
+    En la figura anterior se observan dos bloques, uno es el del método ngOnInit, que es lanzado por el componente justo al montar la página y enlaza los campos del formGroup explicado anteriormente con las variables que se utilizan en este archivo mediante sus nombres (dni y password). El segundo bloque recoge el método onSubmit que se lanza al presionar el botón del formulario y como se puede apreciar primero realiza las validaciones, las cuales en caso de ser erróneas rellenan el modal con un mensaje de error, y finalmente llama al método doLogin que conecta al usuario a la aplicación si todas han sido correctas. Sin embargo estas validaciones son llamadas desde dos elementos externos a este documento, el dniInputService y el passwordInputService. Estos servicios son una colección de métodos que no se encuentran dentro de ningún componente y  sirven tanto para ser utilizados de forma recurrente por cualquiera de estos como para conectar la aplicación \textit{frontend} al \textit{backend}.
     
     \begin{figure}[h]
     \centering
@@ -74,7 +74,7 @@
     \end{figure}
     \FloatBarrier
     
-    Al igual que los componentes, los servicios están englobados en cuatro grandes grupos: admin y reseracher, los dos perfiles existentes en la aplicación y subject y form, los dos elementos principales a manejar en la misma. El resto de grupos de servicios corresponden a métodos puntuales que no encajaban en ninguno de estos grupos, de los cuales hablaremos según vayan apareciendo. En el caso del login sus servicios están incluidos en el grupo de researcher, ya que fue el primer perfil para el que se diseñó el mismo.
+    Al igual que los componentes, los servicios están englobados en cuatro grandes grupos: admin y researcher, los dos perfiles existentes en la aplicación y subject y form, los dos elementos principales a manejar en la misma. El resto de grupos de servicios corresponden a métodos puntuales que no encajaban en ninguno de estos grupos, de los cuales hablaremos según vayan apareciendo. En el caso del login sus servicios están incluidos en el grupo de researcher, ya que fue el primer perfil para el que se diseñó el mismo.
     
      \begin{figure}[h]
     \centering
@@ -144,7 +144,7 @@
     \end{figure}
     \FloatBarrier
     
-    Como se observa en la figura anterior existen dos componentes para este perfil. El primero implementa la vista principal del investigador, donde ve una tabla con los pacientes que tiene asociados y un pequeño campo para introducir nuevos pacientes mediante su código de identificación como se puede ver en la figura 4.8. Incluye también un modal para mensajes de error y un formulario de inclusión. Este formulario mediante CSS aparece sobre el resto del contenido al añadir un paciente para solicitar que marques si se cumplen todos los criterios de admisión (mayor de 18 años, al menos una visita previa en el centro, etc). Aprovecharemos este componente para explicar como se manejan los errores y las llamadas de observables.
+    Como se observa en la figura anterior existen dos componentes para este perfil. El primero implementa la vista principal del investigador, donde se ve una tabla con los pacientes que tiene asociados y un pequeño campo para introducir nuevos pacientes mediante su código de identificación como se puede ver en la figura 4.8. Incluye también un modal para mensajes de error y un formulario de inclusión. Este formulario mediante CSS aparece sobre el resto del contenido al añadir un paciente para solicitar que marques si se cumplen todos los criterios de admisión (mayor de 18 años, al menos una visita previa en el centro, etc). Aprovecharemos este componente para explicar como se manejan los errores y las llamadas de observables.
     
     \begin{figure}[h]
     \centering
@@ -159,7 +159,7 @@
     
         \subsubsection{\underline{Local}}
         
-        Para la inicialización del proyecto en local es necesario tener algún entorno de desarrollo compatible, como Visual Studio Code el cual hemos utilizado nosotros, y tener instalada la interfaz de línea de comandos de Angular (Angular CLI). Una vez instalada solo necesitamos abrir el proyecto en nuestro entorno, abrir un terminal y ejecutar \texttt{ng serve}. En ocasiones el instalador de paquetes npm tiene problemas para reconocer el comando (nos ha ocurrido en algunos equipos) y sera necesario escribir una sentencia algo más completa: \texttt{npm run ng serve}.
+        Para la inicialización del proyecto en local es necesario tener algún entorno de desarrollo compatible, como Visual Studio Code el cual hemos utilizado nosotros, y tener instalada la interfaz de línea de comandos de Angular (Angular CLI). Una vez instalada solo necesitamos abrir el proyecto en nuestro entorno, abrir un terminal y ejecutar \texttt{ng serve}. En ocasiones el instalador de paquetes npm tiene problemas para reconocer el comando (nos ha ocurrido en algunos equipos) y será necesario escribir una sentencia algo más completa: \texttt{npm run ng serve}.
         \subsubsection{\underline{Remoto}}
         En el caso de querer acceder a la aplicación en remoto no se requiere de ningún requisito previo más que utilizar un navegador. La página desde la que se accedía a la aplicación es http://tfg-estudio-medico.com/, la cual se utilizó de manera temporal para hacer pruebas y actualmente no se encuentra disponible. 
     
