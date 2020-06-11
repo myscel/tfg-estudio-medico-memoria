@@ -65,7 +65,7 @@
     \end{figure}
     \FloatBarrier
     
-    En la figura anterior se observan dos bloques, uno es el del método ngOnInit, que es lanzado por el componente justo al montar la página y enlaza los campos del formGroup explicado anteriormente con las variables que se utilizan en este archivo mediante sus nombres (dni y password). El segundo bloque recoge el método onSubmit que se lanza al presionar el botón del formulario y como se puede apreciar primero realiza las validaciones, las cuales en caso de ser erróneas rellenan el modal con un mensaje de error, y finalmente llama al método doLogin que conecta al usuario a la aplicación si todas han sido correctas. Sin embargo estas validaciones son llamadas desde dos elementos externos a este documento, el dniInputService y el passwordInputService. Estos servicios son una colección de métodos que no se encuentran dentro de ningún componente y  sirven tanto para ser utilizados de forma recurrente por cualquiera de estos como para conectar la aplicación \textit{frontend} al \textit{backend}.
+    En la figura 4.5 se observan dos bloques, uno es el del método ngOnInit, que es lanzado por el componente justo al montar la página y enlaza los campos del formGroup explicado anteriormente con las variables que se utilizan en este archivo mediante sus nombres (dni y password). El segundo bloque recoge el método onSubmit que se lanza al presionar el botón del formulario y como se puede apreciar primero realiza las validaciones, las cuales en caso de ser erróneas rellenan el modal con un mensaje de error, y finalmente llama al método doLogin que conecta al usuario a la aplicación si todas han sido correctas. Sin embargo estas validaciones son llamadas desde dos elementos externos a este documento, el dniInputService y el passwordInputService. Estos servicios son una colección de métodos que no se encuentran dentro de ningún componente y  sirven tanto para ser utilizados de forma recurrente por cualquiera de estos como para conectar la aplicación \textit{frontend} al \textit{backend}.
     
     \begin{figure}[h]
     \centering
@@ -96,7 +96,7 @@
     \end{figure}
     \FloatBarrier
     
-    El primer componente corresponde al formulario de la figura, el cual tiene una estructura similar a la explicada para el de login solo que con una longitud de 600 líneas. Así mismo, tiene un componente de TypeScript en el que se manejan las validaciones, mensajes de error y el guardado del contenido en la base de datos. Se sirve de los servicios del form-service para realizar las validaciones de todos sus campos y de varios métodos del researcher-service para realizar los accesos a la base de datos a través del \textit{backend}.
+    El primer componente corresponde al formulario de la figura 3.9, el cual tiene una estructura similar a la explicada para el de login solo que con una longitud de 600 líneas. Así mismo, tiene un componente de TypeScript en el que se manejan las validaciones, mensajes de error y el guardado del contenido en la base de datos. Se sirve de los servicios del form-service para realizar las validaciones de todos sus campos y de varios métodos del researcher-service para realizar los accesos a la base de datos a través del \textit{backend}.
     
     \begin{figure}[h]
     \centering
@@ -105,7 +105,7 @@
     \end{figure}
     \FloatBarrier
     
-    En la figura anterior se puede observar el método encargado de guardar la información del test en el sistema. Utiliza una url para saber donde encontrar el \textit{backend} que le está ofreciendo los métodos, en la cual se utiliza una variable externa exportada desde constantService. Esta variable simplemente sirve como manera rápida de cambiar entre la url de acceso local, con la que los desarrolladores pueden trabajar en sus bases de datos privadas, y la url que conecta con el servidor operativo en Hostinger. Mediante la terminación de esta url, que se añade dentro de cada método, el \textit{backend} es capaz de distinguir a qué controlador y qué método esté haciendo la llamada el \textit{frontend}, el cual además le pasa los datos (en este caso el test relleno) como un parámetro junto a la llamada.\newline
+    En la figura 4.9 se puede observar el método encargado de guardar la información del test en el sistema. Utiliza una url para saber donde encontrar el \textit{backend} que le está ofreciendo los métodos, en la cual se utiliza una variable externa exportada desde constantService. Esta variable simplemente sirve como manera rápida de cambiar entre la url de acceso local, con la que los desarrolladores pueden trabajar en sus bases de datos privadas, y la url que conecta con el servidor operativo en Hostinger. Mediante la terminación de esta url, que se añade dentro de cada método, el \textit{backend} es capaz de distinguir a qué controlador y qué método esté haciendo la llamada el \textit{frontend}, el cual además le pasa los datos (en este caso el test relleno) como un parámetro junto a la llamada.\newline
     
     El segundo componente corresponde a la figura 3.20 y es solo la visualización de los datos de un test ya realizado, obtenidos en una sola llamada al cargar el componente y no comprende ningún otro comportamiento.\newpage
     
@@ -144,7 +144,7 @@
     \end{figure}
     \FloatBarrier
     
-    Como se observa en la figura anterior existen dos componentes para este perfil. El primero implementa la vista principal del investigador, donde se ve una tabla con los pacientes que tiene asociados y un pequeño campo para introducir nuevos pacientes mediante su código de identificación como se puede ver en la figura 3.8. Incluye también un modal para mensajes de error y un formulario de inclusión. Este formulario mediante CSS aparece sobre el resto del contenido al añadir un paciente para solicitar que marques si se cumplen todos los criterios de admisión (mayor de 18 años, al menos una visita previa en el centro, etc). Aprovecharemos este componente para explicar como se manejan los errores y las llamadas de observables.
+    Como se observa en la figura 4.12 existen dos componentes para este perfil. El primero implementa la vista principal del investigador, donde se ve una tabla con los pacientes que tiene asociados y un pequeño campo para introducir nuevos pacientes mediante su código de identificación como se puede ver en la figura 3.8. Incluye también un modal para mensajes de error y un formulario de inclusión. Este formulario mediante CSS aparece sobre el resto del contenido al añadir un paciente para solicitar que marques si se cumplen todos los criterios de admisión (mayor de 18 años, al menos una visita previa en el centro, etc). Aprovecharemos este componente para explicar como se manejan los errores y las llamadas de observables.
     
     \begin{figure}[h]
     \centering
@@ -153,7 +153,7 @@
     \end{figure}
     \FloatBarrier
     
-    En la figura vemos como un observable utiliza un método subscribe que dentro incluye el código del que hablaremos. Este observable es básicamente una llamada asíncrona a un método, en este caso registrar paciente, a la cual nos suscribimos para manejar su resultado cuando se obtenga. Dentro del método vemos un primer bloque de código para responseData, el cual es llamado en caso de devolver el método a parte de su contenido un código HTTP 200, que significa que todo ha ido sin problemas. En caso de devolver otro código se accede al segundo bloque en el que se activa el modal con el mensaje de error y se muestra una explicación del mismo más ilustrativa que solo un número. Estos códigos de error han sido decididos por los desarrolladores siguiendo la filosofía original de HTTP y por ese motivo se conoce exactamente cuales se pueden dar y su significado.\newpage
+    En la figura 4.13 vemos como un observable utiliza un método subscribe que dentro incluye el código del que hablaremos. Este observable es básicamente una llamada asíncrona a un método, en este caso registrar paciente, a la cual nos suscribimos para manejar su resultado cuando se obtenga. Dentro del método vemos un primer bloque de código para responseData, el cual es llamado en caso de devolver el método a parte de su contenido un código HTTP 200, que significa que todo ha ido sin problemas. En caso de devolver otro código se accede al segundo bloque en el que se activa el modal con el mensaje de error y se muestra una explicación del mismo más ilustrativa que solo un número. Estos códigos de error han sido decididos por los desarrolladores siguiendo la filosofía original de HTTP y por ese motivo se conoce exactamente cuales se pueden dar y su significado.\newpage
     
     \subsection{Inicialización del proyecto}
     
@@ -364,7 +364,7 @@
         \end{figure}
         
         
-         \textit{Swagger} posee una interfaz llamada swagger.ui a la cual se puede acceder una vez arrancado el proyecto \textit{backend} para realizar pruebas y comprobar la documentación generada, como se muestra a continuación. Dicha interfaz documenta tanto la información general de la aplicación, como los puntos de acceso y los dtos.
+         \textit{Swagger} posee una interfaz llamada swagger.ui a la cual se puede acceder una vez arrancado el proyecto \textit{backend} para realizar pruebas y comprobar la documentación generada, como se muestra a continuación en la figura 4.28. Dicha interfaz documenta tanto la información general de la aplicación, como los puntos de acceso y los dtos.
          \newline
          
           \begin{figure}[h]
